@@ -106,7 +106,7 @@ export default function Home() {
                 <input
                   type="image"
                   src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
-                  border="0"
+                  className="border-0"
                   name="submit"
                   title="PayPal - The safer, easier way to pay online!"
                   alt="Donate with PayPal button"
@@ -114,7 +114,7 @@ export default function Home() {
 
                 <img
                   alt=""
-                  border="0"
+                  className="border-0"
                   src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
                   width="1"
                   height="1"
