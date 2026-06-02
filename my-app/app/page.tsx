@@ -43,9 +43,19 @@ export default function Home() {
             <a
               href="https://instagram.com/limitless915sc"
               target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full border border-white/25 bg-white/10 px-8 py-4 font-black text-white hover:bg-white hover:text-[#020817]"
             >
               Follow Instagram
+            </a>
+
+            <a
+              href="https://pci.jotform.com/form/261524366412049"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 px-8 py-4 font-black text-white shadow-lg hover:scale-105 transition"
+            >
+              Sponsor A Mat
             </a>
 
           </div>
@@ -130,6 +140,32 @@ export default function Home() {
                 <p className="mt-2 text-2xl font-black">
                   $Limitless915
                 </p>
+              </div>
+
+              {/* SPONSOR FORM */}
+              <div className="rounded-2xl border border-blue-500/30 bg-blue-500/10 px-8 py-6">
+
+                <p className="text-sm uppercase tracking-[0.35em] text-blue-300">
+                  Sponsorship Form
+                </p>
+
+                <a
+                  href="https://pci.jotform.com/form/261524366412049"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block rounded-full bg-blue-500 px-6 py-3 font-bold text-white hover:bg-blue-400"
+                >
+                  Open Sponsor Form
+                </a>
+
+                <div className="mt-6 flex justify-center">
+                  <img
+                    src="/sponsor-form-qr.png"
+                    alt="Sponsor Form QR Code"
+                    className="h-44 w-44 rounded-xl bg-white p-2"
+                  />
+                </div>
+
               </div>
 
             </div>
@@ -218,13 +254,13 @@ export default function Home() {
       {/* CONTACT */}
       <section className="px-6 py-24">
 
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
 
           <h2 className="text-center text-4xl font-black md:text-5xl">
             Connect With Us
           </h2>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-5">
 
             <div className="rounded-3xl border border-white/10 bg-white/10 p-8 text-center">
 
@@ -250,6 +286,7 @@ export default function Home() {
               <a
                 href="https://instagram.com/limitless915sc"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="mt-4 block font-bold text-slate-100"
               >
                 @limitless915sc
@@ -278,6 +315,31 @@ export default function Home() {
               <p className="mt-4 font-bold text-slate-100">
                 @limitless915sc
               </p>
+
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/10 p-8 text-center">
+
+              <p className="text-sm uppercase tracking-[0.35em] text-slate-400">
+                Sponsor Form
+              </p>
+
+              <a
+                href="https://pci.jotform.com/form/261524366412049"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 block font-bold text-slate-100 hover:text-blue-300"
+              >
+                Open Form
+              </a>
+
+              <div className="mt-6 flex justify-center">
+                <img
+                  src="/sponsor-form-qr.png"
+                  alt="Sponsor Form QR Code"
+                  className="h-40 w-40 rounded-lg bg-white p-2"
+                />
+              </div>
 
             </div>
 
