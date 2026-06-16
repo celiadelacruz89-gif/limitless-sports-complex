@@ -46,15 +46,7 @@ export default function Home() {
 
   <source src="/hero-video.mp4" type="video/mp4" />
   </video>
-<button
-  onClick={() => {
-    const video = document.getElementById("heroVideo") as HTMLVideoElement;
-    video.muted = !video.muted;
-  }}
-  className="rounded-full border border-white/20 bg-white/10 px-6 py-3 font-black text-white"
->
-  🔊 Sound On / Off
-</button>
+
   {/* DARK OVERLAY */}
  <div className="absolute inset-0 z-0 bg-black/35" />
 
