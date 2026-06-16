@@ -1,15 +1,30 @@
-export const metadata = {
-  title: "Limitless Sports Complex LLC | El Paso Sports Training & Custom Team Music",
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Limitless Sports Complex LLC",
   description:
-    "Limitless Sports Complex LLC provides athlete development, batting cages, cheer training, custom team songs, athlete anthem creation, and sports programs in El Paso, Texas.",
+    "Limitless Sports Complex LLC provides athlete development, batting cages, cheer training, custom songs, team anthems, and sports programs in El Paso, Texas.",
   keywords: [
-    "El Paso sports training",
-    "batting cages El Paso",
-    "cheer gym El Paso",
-    "custom athlete songs",
-    "team anthem creation",
-    "cheer music",
     "Limitless Sports Complex",
-    "youth sports El Paso",
+    "El Paso Sports Complex",
+    "Batting Cages El Paso",
+    "Cheer Gym El Paso",
+    "Custom Team Songs",
+    "Athlete Anthems",
+    "Cheer Music",
+    "Youth Sports",
   ],
 };
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
