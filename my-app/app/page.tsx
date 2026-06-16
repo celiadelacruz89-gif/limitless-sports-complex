@@ -102,35 +102,66 @@ export default function Home() {
   </div>
 
 </section>
+
 {/* FEATURED VIDEO */}
 <section className="border-y border-white/10 bg-[#020817] px-6 py-24">
   <div className="mx-auto max-w-6xl text-center">
+
     <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
       Watch The Vision
     </p>
 
-    <h2 className="mt-4 text-4xl font-black md:text-5xl">
+    <h2 className="mt-4 text-4xl font-black md:text-6xl">
       The Limitless Story
     </h2>
 
     <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-      Tap the video below to play with sound.
+      Discover the future of athlete development, cheer training,
+      batting cages, and community impact in El Paso.
     </p>
 
-    <div className="mt-12 overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-2xl shadow-black/40">
-      <video
-        controls
-        playsInline
-        preload="metadata"
-        poster="/hero-bg.png"
-        className="w-full cursor-pointer"
-      >
-        <source src="/limitless-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
+    <a
+      href="/limitless-video.mp4"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative mt-12 block overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-black/50"
+    >
+
+      {/* THUMBNAIL */}
+      <img
+        src="/video-thumbnail.png"
+        alt="Watch The Limitless Story"
+        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+      />
+
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-black/40 transition duration-300 group-hover:bg-black/25" />
+
+      {/* PLAY BUTTON */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="flex h-28 w-28 items-center justify-center rounded-full bg-white/90 shadow-2xl transition duration-300 group-hover:scale-110">
+          <span className="ml-2 text-5xl text-[#020817]">
+            ▶
+          </span>
+        </div>
+      </div>
+
+      {/* TEXT */}
+      <div className="absolute bottom-10 left-0 right-0 text-center">
+        <h3 className="text-3xl font-black text-white md:text-4xl">
+          Watch The Limitless Story
+        </h3>
+
+        <p className="mt-3 text-lg text-slate-200">
+          Click to play with sound
+        </p>
+      </div>
+
+    </a>
+
   </div>
 </section>
+
       {/* QUICK ACTIONS */}
       <section id="start" className="px-6 py-20">
         <div className="mx-auto max-w-7xl text-center">
