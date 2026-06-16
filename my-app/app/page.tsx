@@ -237,26 +237,31 @@
     </p>
 
     <div className="mt-12 rounded-3xl border border-cyan-500/20 bg-cyan-500/10 p-8">
-      <h3 className="text-3xl font-black">
-        Goal: $25,000
-      </h3>
+  <h3 className="text-3xl font-black">
+    Goal: $25,000
+  </h3>
 
-      <p className="mt-4 text-slate-300">
-        Sponsor a section of the mat and become part of the foundation
-        of Limitless Sports Complex LLC.
-      </p>
+  <p className="mt-4 text-slate-300">
+    Sponsor a section of the mat and become part of the foundation
+    of Limitless Sports Complex LLC.
+  </p>
 
-      <div className="mt-8 h-8 overflow-hidden rounded-full bg-white/10">
-        <div
-          className="h-full bg-gradient-to-r from-cyan-400 to-blue-500"
-          style={{ width: "0%" }}
-        />
-      </div>
+  <div className="mt-8 h-8 overflow-hidden rounded-full bg-white/10">
+    <div
+      className="h-full bg-gradient-to-r from-cyan-400 to-blue-500"
+      style={{ width: "0%" }}
+    />
+  </div>
 
-      <p className="mt-4 font-bold text-cyan-300">
-        $0 Raised • $25,000 Goal
-      </p>
-    </div>
+  <p className="mt-4 font-bold text-cyan-300">
+    $0 Raised • $25,000 Goal
+  </p>
+
+  <p className="mt-2 text-sm text-slate-400">
+    0% Complete
+  </p>
+</div>
+      
     <h3 className="mt-4 text-4xl font-black">
   Become A Founding Sponsor
 </h3>
@@ -334,6 +339,49 @@
   </div>
 </div>
 
+<div className="mt-10 rounded-2xl border border-yellow-500/30 bg-yellow-500/10 p-6">
+  <h3 className="text-2xl font-black text-yellow-300">
+    Founding Sponsor Opportunity
+  </h3>
+
+  <p className="mt-3 text-slate-300">
+    The first businesses to sponsor Limitless Sports Complex will be permanently
+    recognized as Founding Sponsors on our website, sponsor wall, and future facility.
+  </p>
+</div>
+
+{/* FEATURED SPONSORS WALL */}
+<div className="mt-16 rounded-[2rem] border border-white/10 bg-white/5 p-8">
+  <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
+    Featured Sponsors
+  </p>
+
+  <h3 className="mt-4 text-4xl font-black">
+    Founding Sponsor Wall
+  </h3>
+
+  <p className="mx-auto mt-4 max-w-3xl text-slate-300">
+    Sponsor logos and family names will be displayed here as the campaign grows.
+  </p>
+
+  <div className="mt-10 grid gap-6 md:grid-cols-4">
+    {[1, 2, 3, 4].map((sponsor) => (
+      <div
+        key={sponsor}
+        className="flex h-32 items-center justify-center rounded-2xl border border-dashed border-white/20 bg-black/20 p-6"
+      >
+        <div className="text-center">
+  <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">
+    Founding Sponsor
+  </p>
+  <p className="mt-2 text-lg font-black text-white">
+    Your Logo Here
+  </p>
+</div>
+      </div>
+    ))}
+  </div>
+</div>
     <div className="mt-14 grid gap-8 md:grid-cols-4">
 
       <div className="rounded-3xl border border-green-500/30 bg-green-500/10 p-6">
@@ -823,6 +871,58 @@
           </div>
         </div>
       </section>
+
+{/* FUTURE FACILITY */}
+<section className="border-y border-white/10 bg-[#020817] px-6 py-24">
+  <div className="mx-auto max-w-7xl">
+
+    <div className="text-center">
+      <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
+        Future Home
+      </p>
+
+      <h2 className="mt-4 text-4xl font-black md:text-6xl">
+        Limitless Sports Complex
+      </h2>
+
+      <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+        A future facility designed for athlete development, batting cages,
+        cheer training, camps, events, and community growth.
+      </p>
+    </div>
+
+    <div className="mt-12 overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-2xl">
+      <img
+        src="/facility-rendering.png"
+        alt="Future Limitless Sports Complex"
+        className="w-full object-cover"
+      />
+    </div>
+
+    <div className="mt-10 grid gap-6 md:grid-cols-4">
+      <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/10 p-6 text-center">
+        <h3 className="text-3xl font-black">2</h3>
+        <p className="mt-2 text-slate-300">Cheer Floors</p>
+      </div>
+
+      <div className="rounded-2xl border border-blue-500/20 bg-blue-500/10 p-6 text-center">
+        <h3 className="text-3xl font-black">2-3</h3>
+        <p className="mt-2 text-slate-300">Batting Cages</p>
+      </div>
+
+      <div className="rounded-2xl border border-purple-500/20 bg-purple-500/10 p-6 text-center">
+        <h3 className="text-3xl font-black">8,800</h3>
+        <p className="mt-2 text-slate-300">Square Feet</p>
+      </div>
+
+      <div className="rounded-2xl border border-green-500/20 bg-green-500/10 p-6 text-center">
+        <h3 className="text-3xl font-black">∞</h3>
+        <p className="mt-2 text-slate-300">Opportunities</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* THE VISION */}
       <section id="vision" className="border-y border-white/10 bg-gradient-to-b from-[#020817] to-[#07122b] px-6 py-28">
