@@ -168,17 +168,6 @@ export default function Home() {
           </span>
         </div>
       </div>
-
-      {/* TEXT */}
-      <div className="absolute bottom-10 left-0 right-0 text-center">
-        <h3 className="text-3xl font-black text-white md:text-4xl">
-          Watch The Limitless Story
-        </h3>
-      </div>
-
-    </a>
-
-  </div>
 </section>
 
       {/* QUICK ACTIONS */}
