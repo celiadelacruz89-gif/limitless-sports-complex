@@ -102,6 +102,35 @@ export default function Home() {
   </div>
 
 </section>
+{/* FEATURED VIDEO */}
+<section className="border-y border-white/10 bg-[#020817] px-6 py-24">
+  <div className="mx-auto max-w-6xl text-center">
+    <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
+      Watch The Vision
+    </p>
+
+    <h2 className="mt-4 text-4xl font-black md:text-5xl">
+      The Limitless Story
+    </h2>
+
+    <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+      Press play to watch the full Limitless Sports Complex video with sound.
+    </p>
+
+    <div className="mt-12 overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-2xl shadow-black/40">
+      <video
+        controls
+        preload="metadata"
+        poster="/hero-bg.png"
+        className="w-full"
+      >
+        <source src="/limitless-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
       {/* QUICK ACTIONS */}
       <section id="start" className="px-6 py-20">
         <div className="mx-auto max-w-7xl text-center">
