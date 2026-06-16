@@ -35,18 +35,28 @@ export default function Home() {
 <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-28 text-center">
 
   {/* BACKGROUND VIDEO */}
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="absolute inset-0 z-0 h-full w-full object-cover"
-  >
+<video
+  id="heroVideo"
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute inset-0 z-0 h-full w-full object-cover brightness-125 contrast-110"
+>
+
   <source src="/hero-video.mp4" type="video/mp4" />
   </video>
-
+<button
+  onClick={() => {
+    const video = document.getElementById("heroVideo") as HTMLVideoElement;
+    video.muted = !video.muted;
+  }}
+  className="rounded-full border border-white/20 bg-white/10 px-6 py-3 font-black text-white"
+>
+  🔊 Sound On / Off
+</button>
   {/* DARK OVERLAY */}
-  <div className="absolute inset-0 z-0 bg-black/60" />
+ <div className="absolute inset-0 z-0 bg-black/35" />
 
   {/* CONTENT */}
   <div className="relative z-10 mx-auto max-w-5xl rounded-[2rem] border border-white/15 bg-black/30 p-8 shadow-[0_0_80px_rgba(59,130,246,0.15)] backdrop-blur-md md:p-14">
