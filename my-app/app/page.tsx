@@ -128,11 +128,34 @@ export default function Home() {
     >
 
       {/* THUMBNAIL */}
-      <img
-        src="/video-thumbnail.png"
-        alt="Watch The Limitless Story"
-        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-      />
+      <div className="relative mt-12 overflow-hidden rounded-[2rem] border-2 border-cyan-400/40 shadow-[0_0_50px_rgba(34,211,238,0.25)]">
+
+  <img
+    src="/publicvideo-thumbnail.png"
+    alt="Watch The Limitless Story"
+    className="w-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/35" />
+
+  <div className="absolute inset-0 flex items-center justify-center">
+    <div className="flex h-32 w-32 items-center justify-center rounded-full bg-white/95 shadow-2xl transition duration-300 hover:scale-110">
+      <span className="ml-2 text-6xl text-[#020817]">
+        ▶
+      </span>
+    </div>
+  </div>
+
+  <div className="absolute bottom-10 left-0 right-0 text-center">
+    <h3 className="text-4xl font-black text-white md:text-5xl">
+      WATCH THE LIMITLESS STORY
+    </h3>
+
+    <p className="mt-3 text-xl font-semibold text-cyan-300">
+      Click Play To Experience The Vision
+    </p>
+  </div>
+</div>
 
       {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/40 transition duration-300 group-hover:bg-black/25" />
