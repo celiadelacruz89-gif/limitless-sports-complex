@@ -160,22 +160,14 @@ export default function Home() {
       {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/40 transition duration-300 group-hover:bg-black/25" />
 
-      {/* PLAY BUTTON */}
-      <div className="absolute inset-0 flex items-center justify-center">
-         <div className="flex h-36 w-36 items-center justify-center rounded-full border-4 border-cyan-400 bg-white/95 shadow-[0_0_50px_rgba(34,211,238,0.6)]"
-           <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+      {/* PLAY BUTTON OVERLAY */}
+<div className="pointer-events-none absolute inset-0 flex items-center justify-center">
   <div className="flex h-36 w-36 items-center justify-center rounded-full border-4 border-cyan-400 bg-white/95 shadow-[0_0_50px_rgba(34,211,238,0.6)]">
     <span className="ml-2 text-6xl text-slate-900">
       &#9654;
     </span>
   </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
+</div>
 
       {/* QUICK ACTIONS */}
       <section id="start" className="px-6 py-20">
