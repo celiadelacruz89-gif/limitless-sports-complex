@@ -104,70 +104,29 @@ export default function Home() {
 </section>
 
 {/* FEATURED VIDEO */}
-<section className="border-y border-white/10 bg-[#020817] px-6 py-24">
-  <div className="mx-auto max-w-6xl text-center">
-
-    <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
-      Watch The Vision
-    </p>
-
-    <h2 className="mt-4 text-4xl font-black md:text-6xl">
-      The Limitless Story
-    </h2>
-
-    <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-      Discover the future of athlete development, cheer training,
-      batting cages, and community impact in El Paso.
-    </p>
-
-    <a
-      href="/hero-video.mp4"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative mt-12 block overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-black/50"
-    >
-
-      {/* THUMBNAIL */}
-      <div className="relative mt-12 overflow-hidden rounded-[2rem] border-2 border-cyan-400/40 shadow-[0_0_50px_rgba(34,211,238,0.25)]">
-
-  <img
-    src="/publicvideo-thumbnail.png"
-    alt="Watch The Limitless Story"
-    className="w-full object-cover"
-  />
-
-  <div className="absolute inset-0 bg-black/35" />
-
-  <div className="absolute inset-0 flex items-center justify-center">
-    <div className="flex h-32 w-32 items-center justify-center rounded-full bg-white/95 shadow-2xl transition duration-300 hover:scale-110">
-      <span className="ml-2 text-6xl text-[#020817]">
-        ▶
-      </span>
-    </div>
-  </div>
-
-  <div className="absolute bottom-10 left-0 right-0 text-center">
-    <h3 className="text-4xl font-black text-white md:text-5xl">
-      WATCH THE LIMITLESS STORY
-    </h3>
-
-    <p className="mt-3 text-xl font-semibold text-cyan-300">
-      Click Play To Experience The Vision
-    </p>
-  </div>
-</div>
-
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/40 transition duration-300 group-hover:bg-black/25" />
+<section className="border-y border-white/10 bg-[#020817] px-6 py-16">
+  <div className="mx-auto max-w-7xl">
+    <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-2xl shadow-black/50">
+      <video
+        controls
+        playsInline
+        preload="metadata"
+        poster="/video-thumbnail.png"
+        className="w-full cursor-pointer"
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
       {/* PLAY BUTTON OVERLAY */}
-<div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-  <div className="flex h-36 w-36 items-center justify-center rounded-full border-4 border-cyan-400 bg-white/95 shadow-[0_0_50px_rgba(34,211,238,0.6)]">
-    <span className="ml-2 text-6xl text-slate-900">
-      &#9654;
-    </span>
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div className="flex h-36 w-36 items-center justify-center rounded-full border-4 border-cyan-400 bg-white/95 shadow-[0_0_50px_rgba(34,211,238,0.6)]">
+          <div className="ml-2 h-0 w-0 border-y-[24px] border-y-transparent border-l-[38px] border-l-slate-900" />
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
       {/* QUICK ACTIONS */}
       <section id="start" className="px-6 py-20">
