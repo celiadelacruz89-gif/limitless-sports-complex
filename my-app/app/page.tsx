@@ -164,7 +164,7 @@ export default function Home() {
       <div className="absolute inset-0 flex items-center justify-center">
          <div className="flex h-36 w-36 items-center justify-center rounded-full border-4 border-cyan-400 bg-white/95 shadow-[0_0_50px_rgba(34,211,238,0.6)]"
            <span className="ml-2 text-6xl text-[#020817]">
-            ▶
+            &#9654;
           </span>
         </div>
       </div>
