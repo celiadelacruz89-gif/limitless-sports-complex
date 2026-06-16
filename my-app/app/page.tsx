@@ -31,63 +31,75 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-28 text-center">
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center opacity-90"
-          style={{ backgroundImage: "url('/hero-bg.png')" }}
-        />
+  {/* HERO */}
+<section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-28 text-center">
 
-        <div className="absolute inset-0 z-0 bg-black/25" />
+  {/* BACKGROUND VIDEO */}
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 z-0 h-full w-full object-cover"
+  >
+    <source src="/limitless-video.mp4" type="video/mp4" />
+  </video>
 
-        <div className="relative z-10 mx-auto max-w-5xl rounded-[2rem] border border-white/15 bg-black/35 p-8 shadow-[0_0_80px_rgba(59,130,246,0.15)] backdrop-blur-md md:p-14">
-          <p className="mb-5 text-sm font-bold uppercase tracking-[0.45em] text-slate-300">
-            El Paso, Texas
-          </p>
+  {/* DARK OVERLAY */}
+  <div className="absolute inset-0 z-0 bg-black/60" />
 
-          <h1 className="bg-gradient-to-r from-white via-slate-300 to-slate-500 bg-clip-text text-6xl font-black tracking-tight text-transparent md:text-8xl">
-            LIMITLESS
-          </h1>
+  {/* CONTENT */}
+  <div className="relative z-10 mx-auto max-w-5xl rounded-[2rem] border border-white/15 bg-black/30 p-8 shadow-[0_0_80px_rgba(59,130,246,0.15)] backdrop-blur-md md:p-14">
 
-          <p className="mt-4 text-2xl font-semibold text-slate-200 md:text-3xl">
-            Sports Complex LLC
-          </p>
+    <p className="mb-5 text-sm font-bold uppercase tracking-[0.45em] text-slate-300">
+      El Paso, Texas
+    </p>
 
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-slate-300">
-            A premium sports brand building toward indoor batting cages,
-            cheer training, athlete development, custom team music,
-            and community growth.
-          </p>
+    <h1 className="bg-gradient-to-r from-white via-slate-300 to-slate-500 bg-clip-text text-6xl font-black tracking-tight text-transparent md:text-8xl">
+      LIMITLESS
+    </h1>
 
-          <div className="mt-10 flex flex-col justify-center gap-4 md:flex-row">
-            <a
-              href="mailto:limitless915sc@gmail.com"
-              className="rounded-full bg-gradient-to-r from-white to-slate-400 px-8 py-4 font-black text-[#020817] transition duration-300 hover:scale-105 hover:shadow-2xl"
-            >
-              Contact Us
-            </a>
+    <p className="mt-4 text-2xl font-semibold text-slate-200 md:text-3xl">
+      Sports Complex LLC
+    </p>
 
-            <a
-              href="https://instagram.com/limitless915sc"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-white/25 bg-white/10 px-8 py-4 font-black text-white transition duration-300 hover:scale-105 hover:bg-white hover:text-[#020817]"
-            >
-              Follow Instagram
-            </a>
+    <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-slate-300">
+      Building the future home of athlete development, batting cages,
+      cheer training, custom music, and community growth in El Paso.
+    </p>
 
-            <a
-              href="https://form.jotform.com/261584398573068"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 font-black text-white shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl"
-            >
-              Order A Custom Song
-            </a>
-          </div>
-        </div>
-      </section>
+    <div className="mt-10 flex flex-col justify-center gap-4 md:flex-row">
 
+      <a
+        href="mailto:limitless915sc@gmail.com"
+        className="rounded-full bg-gradient-to-r from-white to-slate-400 px-8 py-4 font-black text-[#020817] transition duration-300 hover:scale-105 hover:shadow-2xl"
+      >
+        Contact Us
+      </a>
+
+      <a
+        href="https://instagram.com/limitless915sc"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-full border border-white/25 bg-white/10 px-8 py-4 font-black text-white transition duration-300 hover:scale-105 hover:bg-white hover:text-[#020817]"
+      >
+        Follow Instagram
+      </a>
+
+      <a
+        href="https://form.jotform.com/261584398573068"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 font-black text-white shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl"
+      >
+        Order A Custom Song
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
       {/* QUICK ACTIONS */}
       <section id="start" className="px-6 py-20">
         <div className="mx-auto max-w-7xl text-center">
