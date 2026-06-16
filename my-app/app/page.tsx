@@ -1,6 +1,7 @@
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#020817] text-white">
+      import FeaturedVideo from "@/components/FeaturedVideo";
       {/* STICKY NAVBAR */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#020817]/90 px-6 py-4 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
@@ -103,30 +104,23 @@ export default function Home() {
 
 </section>
 
-{/* FEATURED VIDEO */}
+  {/* FEATURED VIDEO */}
 <section className="border-y border-white/10 bg-[#020817] px-6 py-16">
   <div className="mx-auto max-w-7xl">
-    <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-2xl shadow-black/50">
-      <video
-        controls
-        playsInline
-        preload="metadata"
-        poster="/video-thumbnail.png"
-        className="w-full cursor-pointer"
-      >
-        <source src="/hero-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      {/* PLAY BUTTON OVERLAY */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div className="flex h-36 w-36 items-center justify-center rounded-full border-4 border-cyan-400 bg-white/95 shadow-[0_0_50px_rgba(34,211,238,0.6)]">
-          <div className="ml-2 h-0 w-0 border-y-[24px] border-y-transparent border-l-[38px] border-l-slate-900" />
-        </div>
-      </div>
-    </div>
+    <FeaturedVideo />
   </div>
 </section>
+<video
+  controls
+  playsInline
+  preload="metadata"
+  poster="/publicvideo-thumbnail.png"
+  className="w-full"
+  onPlay={() => setPlaying(true)}
+  onPause={() => setPlaying(false)}
+>
+  <source src="/hero-video.mp4" type="video/mp4" />
+</video>
 
       {/* QUICK ACTIONS */}
       <section id="start" className="px-6 py-20">
