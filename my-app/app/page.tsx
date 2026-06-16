@@ -1,18 +1,45 @@
 export default function Home() {
-  const matGoal = 25000;
-  const matRaised = 0;
-  const matPercent = Math.min((matRaised / matGoal) * 100, 100);
-
   return (
     <main className="min-h-screen bg-[#020817] text-white">
+      {/* STICKY NAVBAR */}
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#020817]/90 px-6 py-4 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between">
+          <a href="#" className="text-xl font-black tracking-widest">
+            LIMITLESS
+          </a>
+
+          <nav className="hidden gap-6 text-sm font-bold text-slate-300 md:flex">
+            <a href="#" className="hover:text-white">Home</a>
+            <a href="#start" className="hover:text-white">Start Here</a>
+            <a href="#creative" className="hover:text-white">Creative</a>
+            <a href="#samples" className="hover:text-white">Samples</a>
+            <a href="#cheer" className="hover:text-white">Cheer Music</a>
+            <a href="#tball" className="hover:text-white">T-Ball Music</a>
+            <a href="#vision" className="hover:text-white">Vision</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
+          </nav>
+
+          <a
+            href="https://form.jotform.com/261584398573068"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-5 py-3 text-sm font-black text-white transition duration-300 hover:scale-105 hover:shadow-2xl"
+          >
+            Order Song
+          </a>
+        </div>
+      </header>
 
       {/* HERO */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 text-center">
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-28 text-center">
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center opacity-90"
+          style={{ backgroundImage: "url('/hero-bg.png')" }}
+        />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(148,163,184,0.35),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(30,64,175,0.25),transparent_35%)]" />
+        <div className="absolute inset-0 z-0 bg-black/25" />
 
-        <div className="relative z-10 mx-auto max-w-5xl rounded-[2rem] border border-white/15 bg-white/5 p-8 shadow-2xl shadow-black/50 backdrop-blur-md md:p-14">
-
+        <div className="relative z-10 mx-auto max-w-5xl rounded-[2rem] border border-white/15 bg-black/35 p-8 shadow-[0_0_80px_rgba(59,130,246,0.15)] backdrop-blur-md md:p-14">
           <p className="mb-5 text-sm font-bold uppercase tracking-[0.45em] text-slate-300">
             El Paso, Texas
           </p>
@@ -26,16 +53,15 @@ export default function Home() {
           </p>
 
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-slate-300">
-            A premium indoor sports facility built for batting cages,
-            cheer training, team rentals, athlete development,
-            camps, private lessons, and community growth.
+            A premium sports brand building toward indoor batting cages,
+            cheer training, athlete development, custom team music,
+            and community growth.
           </p>
 
           <div className="mt-10 flex flex-col justify-center gap-4 md:flex-row">
-
             <a
               href="mailto:limitless915sc@gmail.com"
-              className="rounded-full bg-gradient-to-r from-white to-slate-400 px-8 py-4 font-black text-[#020817] shadow-lg shadow-slate-500/20 hover:from-slate-200 hover:to-white"
+              className="rounded-full bg-gradient-to-r from-white to-slate-400 px-8 py-4 font-black text-[#020817] transition duration-300 hover:scale-105 hover:shadow-2xl"
             >
               Contact Us
             </a>
@@ -44,145 +70,92 @@ export default function Home() {
               href="https://instagram.com/limitless915sc"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/25 bg-white/10 px-8 py-4 font-black text-white hover:bg-white hover:text-[#020817]"
+              className="rounded-full border border-white/25 bg-white/10 px-8 py-4 font-black text-white transition duration-300 hover:scale-105 hover:bg-white hover:text-[#020817]"
             >
               Follow Instagram
             </a>
 
             <a
-              href="https://pci.jotform.com/form/261524366412049"
+              href="https://form.jotform.com/261584398573068"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 px-8 py-4 font-black text-white shadow-lg hover:scale-105 transition"
+              className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 font-black text-white shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl"
             >
-              Sponsor A Mat
+              Order A Custom Song
             </a>
-
           </div>
         </div>
       </section>
 
-      {/* SPONSOR A MAT */}
-      <section className="bg-slate-950 text-white py-20 px-6">
-
-        <div className="max-w-5xl mx-auto text-center">
-
+      {/* QUICK ACTIONS */}
+      <section id="start" className="px-6 py-20">
+        <div className="mx-auto max-w-7xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
-            Community Campaign
+            Start Here
           </p>
 
-          <h2 className="mt-4 text-5xl font-black">
-            Sponsor-a-Mat
+          <h2 className="mt-4 text-4xl font-black md:text-5xl">
+            How Can Limitless Help You?
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-300 max-w-3xl mx-auto">
-            Help us build a safe and professional training space
-            for athletes across El Paso. Every donation helps fund
-            cheer flooring, athlete safety equipment, and training areas.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+            Choose what you need today and we’ll guide you to the right place.
           </p>
 
-          <div className="mt-14 rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/40">
-
-            <div className="flex justify-between mb-4 text-lg font-bold">
-              <span>${matRaised.toLocaleString()} Raised</span>
-              <span>${matGoal.toLocaleString()} Goal</span>
-            </div>
-
-            <div className="h-8 w-full overflow-hidden rounded-full bg-slate-800">
-              <div
-                className="h-8 rounded-full bg-gradient-to-r from-slate-300 to-blue-400 transition-all duration-700"
-                style={{ width: `${matPercent}%` }}
-              />
-            </div>
-
-            <p className="mt-5 text-2xl font-black">
-              {matPercent.toFixed(0)}% Funded
-            </p>
-
-            <div className="mt-12 flex flex-col items-center gap-6">
-
-              {/* PAYPAL */}
-              <form
-                action="https://www.paypal.com/donate"
-                method="post"
-                target="_top"
+          <div className="mt-14 grid gap-8 md:grid-cols-3">
+            <div className="rounded-3xl border border-purple-500/30 bg-purple-500/10 p-8 shadow-2xl shadow-purple-500/10">
+              <h3 className="text-3xl font-black">Custom Song</h3>
+              <p className="mt-5 leading-8 text-slate-300">
+                Request an athlete spotlight song, family tribute,
+                senior night song, or full team anthem.
+              </p>
+              <a
+                href="https://form.jotform.com/261584398573068"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-block rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-7 py-4 font-black text-white transition duration-300 hover:scale-105 hover:shadow-2xl"
               >
-                <input
-                  type="hidden"
-                  name="campaign_id"
-                  value="7D2GKYZ57KXLL"
-                />
-
-                <input
-                  type="image"
-                  src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
-                  className="border-0"
-                  name="submit"
-                  title="PayPal - The safer, easier way to pay online!"
-                  alt="Donate with PayPal button"
-                />
-
-                <img
-                  alt=""
-                  className="border-0"
-                  src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
-                  width="1"
-                  height="1"
-                />
-              </form>
-
-              {/* CASH APP */}
-              <div className="rounded-2xl border border-green-500/30 bg-green-500/10 px-8 py-5">
-                <p className="text-sm uppercase tracking-[0.35em] text-green-300">
-                  Cash App
-                </p>
-
-                <p className="mt-2 text-2xl font-black">
-                  $Limitless915
-                </p>
-              </div>
-
-              {/* SPONSOR FORM */}
-              <div className="rounded-2xl border border-blue-500/30 bg-blue-500/10 px-8 py-6">
-
-                <p className="text-sm uppercase tracking-[0.35em] text-blue-300">
-                  Sponsorship Form
-                </p>
-
-                <a
-                  href="https://pci.jotform.com/form/261524366412049"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block rounded-full bg-blue-500 px-6 py-3 font-bold text-white hover:bg-blue-400"
-                >
-                  Open Sponsor Form
-                </a>
-
-                <div className="mt-6 flex justify-center">
-                  <img
-                    src="/sponsor-form-qr.png"
-                    alt="Sponsor Form QR Code"
-                    className="h-44 w-44 rounded-xl bg-white p-2"
-                  />
-                </div>
-
-              </div>
-
+                Request A Song
+              </a>
             </div>
 
+            <div className="rounded-3xl border border-blue-500/30 bg-blue-500/10 p-8 shadow-2xl shadow-blue-500/10">
+              <h3 className="text-3xl font-black">Support The Vision</h3>
+              <p className="mt-5 leading-8 text-slate-300">
+                Sponsor, donate, or support the future home of Limitless Sports
+                Complex and athlete development.
+              </p>
+              <a
+                href="https://pci.jotform.com/form/261524366412049"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-block rounded-full bg-blue-500 px-7 py-4 font-black text-white transition duration-300 hover:scale-105 hover:bg-blue-400 hover:shadow-2xl"
+              >
+                Become A Sponsor
+              </a>
+            </div>
+
+            <div className="rounded-3xl border border-green-500/30 bg-green-500/10 p-8 shadow-2xl shadow-green-500/10">
+              <h3 className="text-3xl font-black">Follow Facility Updates</h3>
+              <p className="mt-5 leading-8 text-slate-300">
+                Stay connected as we build toward batting cages,
+                cheer training, athlete programs, and future events.
+              </p>
+              <a
+                href="mailto:limitless915sc@gmail.com?subject=Limitless Facility Updates"
+                className="mt-8 inline-block rounded-full bg-green-500 px-7 py-4 font-black text-white transition duration-300 hover:scale-105 hover:bg-green-400 hover:shadow-2xl"
+              >
+                Get Updates
+              </a>
+            </div>
           </div>
-
         </div>
-
       </section>
 
       {/* PROGRAMS */}
       <section className="px-6 py-24">
-
         <div className="mx-auto max-w-6xl">
-
           <div className="text-center">
-
             <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
               First Launch Phase
             </p>
@@ -190,99 +163,501 @@ export default function Home() {
             <h2 className="mt-4 bg-gradient-to-r from-white to-slate-500 bg-clip-text text-4xl font-black text-transparent md:text-5xl">
               Batting Cages + Cheer Gym
             </h2>
-
           </div>
 
           <div className="mt-16 grid gap-8 md:grid-cols-2">
-
             <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/12 to-white/5 p-8 shadow-2xl shadow-black/30">
-
               <div className="mb-6 h-1 w-24 rounded-full bg-gradient-to-r from-white to-slate-500" />
-
-              <h3 className="text-3xl font-black">
-                Batting Cages
-              </h3>
-
+              <h3 className="text-3xl font-black">Batting Cages</h3>
               <p className="mt-5 leading-8 text-slate-300">
-                Indoor baseball and softball batting cages for
-                individual reps, team rentals, hitting practice,
-                lessons, and future clinics.
+                Indoor baseball and softball batting cages for individual reps,
+                team rentals, hitting practice, lessons, and future clinics.
               </p>
-
             </div>
 
             <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/12 to-white/5 p-8 shadow-2xl shadow-black/30">
-
               <div className="mb-6 h-1 w-24 rounded-full bg-gradient-to-r from-white to-slate-500" />
-
-              <h3 className="text-3xl font-black">
-                Cheer Gym
-              </h3>
-
+              <h3 className="text-3xl font-black">Cheer Gym</h3>
               <p className="mt-5 leading-8 text-slate-300">
-                Tumbling, stunting, jumps, choreography,
-                conditioning, competition prep, private lessons,
-                and team practice space.
+                Tumbling, stunting, jumps, choreography, conditioning,
+                competition prep, private lessons, and team practice space.
               </p>
-
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section className="border-y border-white/10 bg-white/[0.04] px-6 py-24">
-
-        <div className="mx-auto max-w-5xl text-center">
-
-          <h2 className="text-4xl font-black md:text-5xl">
-            Built to Help Athletes Rise
-          </h2>
-
-          <p className="mt-8 text-lg leading-8 text-slate-300">
-            Limitless Sports Complex LLC was created to give
-            athletes a safe, professional, and inspiring place
-            to train year-round. Our mission is to provide a
-            community-centered facility where athletes can build
-            confidence, discipline, strength, skill, and opportunity.
+      {/* CREATIVE SERVICES */}
+      <section id="creative" className="border-y border-white/10 bg-white/[0.04] px-6 py-24">
+        <div className="mx-auto max-w-6xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
+            Limitless Creative Services
           </p>
 
+          <h2 className="mt-4 text-4xl font-black md:text-5xl">
+            Custom Songs & Team Anthems
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+            Personalized songs for individual athletes, teams, coaches, families,
+            and special events. From player spotlight songs to full team anthems,
+            we help turn your story into music.
+          </p>
+
+          <p className="mt-4 text-slate-400">
+            Senior Nights • Team Walkouts • Highlight Videos • Birthdays •
+            Military Tributes • Banquets • Fundraisers
+          </p>
+
+          <h3 className="mt-10 text-3xl font-black">Starting at Only $49</h3>
+
+          <div className="mt-10 flex flex-col justify-center gap-4 md:flex-row">
+            <a
+              href="https://form.jotform.com/261584398573068"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gradient-to-r from-white to-slate-400 px-8 py-4 font-black text-[#020817] transition duration-300 hover:scale-105 hover:shadow-2xl"
+            >
+              Request Custom Song
+            </a>
+
+            <a
+              href="https://form.jotform.com/261584398573068"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/25 bg-white/10 px-8 py-4 font-black text-white transition duration-300 hover:scale-105 hover:bg-white hover:text-[#020817]"
+            >
+              Request Team Anthem
+            </a>
+          </div>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            <div className="rounded-3xl border border-white/10 bg-white/10 p-6">
+              <p className="text-sm uppercase tracking-[0.3em] text-slate-400">
+                Starter
+              </p>
+              <h3 className="mt-3 text-4xl font-black">$49</h3>
+              <p className="mt-2 font-bold text-white">
+                Basic Athlete Spotlight Song
+              </p>
+              <ul className="mt-6 space-y-2 text-left text-slate-300">
+                <li>• Personalized athlete song</li>
+                <li>• Athlete name included</li>
+                <li>• 1 verse + chorus</li>
+                <li>• MP3 delivery</li>
+                <li>• 3–5 day delivery</li>
+              </ul>
+
+              <a
+                href="https://form.jotform.com/261584398573068"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-block rounded-full bg-white px-6 py-3 font-black text-[#020817] transition duration-300 hover:scale-105 hover:shadow-2xl"
+              >
+                Request Package
+              </a>
+
+              <a
+                href="https://buy.stripe.com/test_5kQ4gB4ZD2ed2dl2A4cV201"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block rounded-full border border-white/25 px-6 py-3 font-black text-white transition duration-300 hover:scale-105 hover:bg-white hover:text-[#020817]"
+              >
+                Pay $49
+              </a>
+            </div>
+
+            <div className="relative rounded-3xl border border-blue-400/50 bg-blue-500/10 p-6 shadow-2xl shadow-blue-500/20 md:scale-105">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-blue-500 px-5 py-2 text-sm font-black text-white">
+                MOST POPULAR
+              </div>
+
+              <p className="text-sm uppercase tracking-[0.3em] text-blue-300">
+                Premium
+              </p>
+              <h3 className="mt-3 text-4xl font-black">$99</h3>
+              <p className="mt-2 font-bold text-white">
+                Premium Athlete Anthem
+              </p>
+              <ul className="mt-6 space-y-2 text-left text-slate-300">
+                <li>• Fully custom lyrics</li>
+                <li>• Emotional storytelling</li>
+                <li>• Cover artwork</li>
+                <li>• Social media teaser</li>
+                <li>• 3–7 day delivery</li>
+              </ul>
+
+              <a
+                href="https://form.jotform.com/261584398573068"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-block rounded-full bg-blue-500 px-6 py-3 font-black text-white transition duration-300 hover:scale-105 hover:shadow-2xl"
+              >
+                Request Package
+              </a>
+
+              <a
+                href="https://buy.stripe.com/test_3cIeVfcs58CB9FNb6AcV202"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block rounded-full border border-blue-300/40 px-6 py-3 font-black text-white transition duration-300 hover:scale-105 hover:bg-blue-500"
+              >
+                Pay $99
+              </a>
+            </div>
+
+            <div className="rounded-3xl border border-green-500/30 bg-green-500/10 p-6">
+              <p className="text-sm uppercase tracking-[0.3em] text-green-300">
+                Team
+              </p>
+              <h3 className="mt-3 text-4xl font-black">$199+</h3>
+              <p className="mt-2 font-bold text-white">
+                Team Anthems & Walkout Songs
+              </p>
+              <ul className="mt-6 space-y-2 text-left text-slate-300">
+                <li>• Team hype anthem</li>
+                <li>• Walkout music</li>
+                <li>• Competition edits</li>
+                <li>• Team shoutouts</li>
+                <li>• 5–10 day delivery</li>
+              </ul>
+
+              <a
+                href="https://form.jotform.com/261584398573068"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-block rounded-full bg-green-500 px-6 py-3 font-black text-white transition duration-300 hover:scale-105 hover:shadow-2xl"
+              >
+                Request Package
+              </a>
+
+              <a
+                href="https://buy.stripe.com/test_3cIcN763Hf0Z6tB1w0cV203"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block rounded-full border border-green-300/40 px-6 py-3 font-black text-white transition duration-300 hover:scale-105 hover:bg-green-500"
+              >
+                Pay $199
+              </a>
+            </div>
+          </div>
+
+          <p className="mt-8 text-sm text-slate-400">
+            Rush delivery available for an additional fee.
+          </p>
+
+          <div className="mt-12 grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-8 text-left md:grid-cols-4">
+            <p className="text-slate-300">✔ Personalized for your athlete or team</p>
+            <p className="text-slate-300">✔ Professionally mixed and mastered</p>
+            <p className="text-slate-300">✔ Delivered digitally</p>
+            <p className="text-slate-300">✔ Built for social media & highlight videos</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CREATIVE PORTFOLIO */}
+      <section id="samples" className="border-y border-white/10 bg-gradient-to-b from-[#020817] to-[#07122b] px-6 py-24">
+        <div className="mx-auto max-w-7xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
+            Listen To The Limitless Sound
+          </p>
+
+          <h2 className="mt-4 text-4xl font-black md:text-5xl">
+            Custom Song Samples
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+            Listen to protected 15-second previews of custom songs created for
+            athletes, teams, and families.
+          </p>
+
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl shadow-black/20 transition duration-300 hover:scale-[1.02]">
+              <p className="text-sm uppercase tracking-[0.3em] text-slate-400">
+                Individual Athlete
+              </p>
+              <h3 className="mt-3 text-2xl font-black">
+                Athlete Spotlight Samples
+              </h3>
+              <p className="mt-4 text-slate-300">
+                Personalized songs for players, senior nights, birthdays, and
+                highlight videos.
+              </p>
+
+              <div className="mt-6 text-left">
+                <p className="mb-2 font-bold">Red Cleats, Lion Heart</p>
+                <audio controls className="w-full">
+                  <source src="/Sample1_IndividualAthlete.mp3" type="audio/mpeg" />
+                </audio>
+
+                <p className="mt-5 mb-2 font-bold">Bat Crack Anthem</p>
+                <audio controls className="w-full">
+                  <source src="/Sample2_IndividualAthlete.mp3" type="audio/mpeg" />
+                </audio>
+
+                <p className="mt-3 text-sm text-slate-400">
+                  15-second protected previews
+                </p>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-3xl border border-blue-500/30 bg-blue-500/10 p-6 shadow-2xl shadow-blue-500/20 transition duration-300 hover:scale-[1.02]">
+              <p className="text-sm uppercase tracking-[0.3em] text-blue-300">
+                Team Anthem
+              </p>
+              <h3 className="mt-3 text-2xl font-black">Team Hype Samples</h3>
+              <p className="mt-4 text-slate-300">
+                Custom anthems for teams, walkouts, competitions, and hype reels.
+              </p>
+
+              <div className="mt-6 text-left">
+                <p className="mb-2 font-bold">Red & Black</p>
+                <audio controls className="w-full">
+                  <source src="/Sample1_TeamAnthem.mp3" type="audio/mpeg" />
+                </audio>
+
+                <p className="mt-5 mb-2 font-bold">Renegades Stateline</p>
+                <audio controls className="w-full">
+                  <source src="/Sample2_TeamAnthem.mp3" type="audio/mpeg" />
+                </audio>
+
+                <p className="mt-3 text-sm text-slate-400">
+                  15-second protected previews
+                </p>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-3xl border border-green-500/30 bg-green-500/10 p-6 shadow-2xl shadow-green-500/20 transition duration-300 hover:scale-[1.02]">
+              <p className="text-sm uppercase tracking-[0.3em] text-green-300">
+                Family Tribute
+              </p>
+              <h3 className="mt-3 text-2xl font-black">
+                Emotional Tribute Samples
+              </h3>
+              <p className="mt-4 text-slate-300">
+                Emotional keepsake songs for families, military kids, siblings,
+                and proud parents.
+              </p>
+
+              <div className="mt-6 text-left">
+                <p className="mb-2 font-bold">Elizabeth’s Bravery</p>
+                <audio controls className="w-full">
+                  <source src="/Sample1_FamilyTribute.mp3" type="audio/mpeg" />
+                </audio>
+
+                <p className="mt-5 mb-2 font-bold">Anthony</p>
+                <audio controls className="w-full">
+                  <source src="/Sample2_FamilyTribute.mp3" type="audio/mpeg" />
+                </audio>
+
+                <p className="mt-3 text-sm text-slate-400">
+                  15-second protected previews
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-14">
+            <a
+              href="https://form.jotform.com/261584398573068"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-10 py-5 text-lg font-black text-white shadow-2xl transition duration-300 hover:scale-105"
+            >
+              Request Your Custom Song
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CHEER MUSIC */}
+      <section id="cheer" className="border-y border-white/10 bg-white/[0.04] px-6 py-24">
+        <div className="mx-auto max-w-7xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
+            Cheer Music
+          </p>
+
+          <h2 className="mt-4 text-4xl font-black md:text-5xl">
+            Custom Cheer Mixes Tracks
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+            High-energy cheer music for routines, entrances, showcases, pep rallies,
+            camps, halftime performances, and competitions.
+          </p>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <div className="rounded-3xl border border-pink-500/30 bg-pink-500/10 p-6">
+              <h3 className="text-3xl font-black">:45</h3>
+              <p className="mt-3 text-2xl font-black text-pink-300">$75</p>
+              <p className="mt-4 text-sm font-bold uppercase tracking-[0.25em] text-pink-200">
+                Intro / Performance Clip
+              </p>
+              <p className="mt-4 leading-7 text-slate-300">
+                Best for short showcases, entrances, halftime performances,
+                pep rallies, camps, or social media performance edits.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-purple-500/30 bg-purple-500/10 p-6">
+              <h3 className="text-3xl font-black">1:00</h3>
+              <p className="mt-3 text-2xl font-black text-purple-300">$100</p>
+              <p className="mt-4 text-sm font-bold uppercase tracking-[0.25em] text-purple-200">
+                Short Routine Mix
+              </p>
+              <p className="mt-4 leading-7 text-slate-300">
+                Great for school performances, exhibitions, mini routines,
+                intros, and beginner teams needing clean high-energy music.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-1">
+            <div className="rounded-3xl border border-purple-500/30 bg-purple-500/10 p-8">
+              <h3 className="text-3xl font-black">Add-Ons</h3>
+              <p className="mt-5 leading-8 text-slate-300">
+                Rush delivery +$50, extra revision +$25, voiceover only $40+,
+                custom chant writing, and premium theme packages available.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <a
+              href="https://form.jotform.com/261585481619063"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gradient-to-r from-pink-500 to-purple-500 px-10 py-5 text-lg font-black text-white shadow-2xl transition duration-300 hover:scale-105"
+            >
+              Start My Cheer Mix
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* T-BALL MUSIC */}
+      <section id="tball" className="border-y border-white/10 bg-gradient-to-b from-[#020817] to-[#07122b] px-6 py-24">
+        <div className="mx-auto max-w-7xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
+            T-Ball & Youth Sports Music
+          </p>
+
+          <h2 className="mt-4 text-4xl font-black md:text-5xl">
+            Custom Walkout Songs For Young Athletes
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+            Fun, clean, hype songs for T-ball players, baseball teams,
+            football players, birthday shoutouts, highlight videos,
+            and youth sports memories.
+          </p>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            <div className="rounded-3xl border border-red-500/30 bg-red-500/10 p-8">
+              <h3 className="text-3xl font-black">Player Walkout Song</h3>
+              <p className="mt-5 leading-8 text-slate-300">
+                A short hype song made for a player’s name, number, sport,
+                personality, team colors, and walkout moment.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-yellow-500/30 bg-yellow-500/10 p-8">
+              <h3 className="text-3xl font-black">Team Hype Song</h3>
+              <p className="mt-5 leading-8 text-slate-300">
+                A custom song for the whole team, perfect for game days,
+                social posts, end-of-season videos, and banquets.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-blue-500/30 bg-blue-500/10 p-8">
+              <h3 className="text-3xl font-black">Highlight Reel Song</h3>
+              <p className="mt-5 leading-8 text-slate-300">
+                A custom track made for player videos, proud parent posts,
+                tournament recaps, and special sports memories.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <div className="rounded-3xl border border-white/10 bg-white/10 p-6">
+              <h3 className="text-3xl font-black">$49</h3>
+              <p className="mt-3 text-slate-300">Basic player song</p>
+            </div>
+
+            <div className="rounded-3xl border border-red-500/40 bg-red-500/10 p-6 shadow-2xl shadow-red-500/20">
+              <h3 className="text-3xl font-black">$99</h3>
+              <p className="mt-3 text-slate-300">Premium player anthem</p>
+            </div>
+
+            <div className="rounded-3xl border border-blue-500/40 bg-blue-500/10 p-6">
+              <h3 className="text-3xl font-black">$199+</h3>
+              <p className="mt-3 text-slate-300">Full team song package</p>
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <a
+              href="https://form.jotform.com/261584398573068"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gradient-to-r from-red-500 to-yellow-500 px-10 py-5 text-lg font-black text-white shadow-2xl transition duration-300 hover:scale-105"
+            >
+              Request T-Ball Music
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* THE VISION */}
+      <section id="vision" className="border-y border-white/10 bg-gradient-to-b from-[#020817] to-[#07122b] px-6 py-28">
+        <div className="mx-auto max-w-6xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.45em] text-slate-400">
+            The Vision
+          </p>
+
+          <h2 className="mt-5 text-5xl font-black md:text-6xl">
+            Building Something Bigger For Athletes
+          </h2>
+
+          <p className="mx-auto mt-8 max-w-4xl text-xl leading-9 text-slate-300">
+            Limitless Sports Complex LLC is currently building toward a future
+            indoor sports facility designed to give athletes a safe, inspiring,
+            and professional place to train, grow, and create opportunities both
+            on and off the field.
+          </p>
+
+          <p className="mx-auto mt-8 max-w-4xl text-lg leading-8 text-slate-400">
+            Through community support, fundraising, sponsorships, creative
+            services, athlete development, and local partnerships, we are turning
+            the Limitless vision into reality — one step at a time.
+          </p>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section className="px-6 py-24">
-
-        <div className="mx-auto max-w-7xl">
-
+      <section id="contact" className="px-6 py-24">
+        <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-4xl font-black md:text-5xl">
             Connect With Us
           </h2>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-5">
-
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-3xl border border-white/10 bg-white/10 p-8 text-center">
-
               <p className="text-sm uppercase tracking-[0.35em] text-slate-400">
                 Email
               </p>
-
               <a
                 href="mailto:limitless915sc@gmail.com"
                 className="mt-4 block font-bold text-slate-100"
               >
                 limitless915sc@gmail.com
               </a>
-
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-white/10 p-8 text-center">
-
               <p className="text-sm uppercase tracking-[0.35em] text-slate-400">
                 Instagram
               </p>
-
               <a
                 href="https://instagram.com/limitless915sc"
                 target="_blank"
@@ -291,58 +666,23 @@ export default function Home() {
               >
                 @limitless915sc
               </a>
-
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-white/10 p-8 text-center">
-
               <p className="text-sm uppercase tracking-[0.35em] text-slate-400">
                 Facebook
               </p>
-
               <p className="mt-4 font-bold text-slate-100">
                 Limitless Sports Complex LLC
               </p>
-
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-white/10 p-8 text-center">
-
               <p className="text-sm uppercase tracking-[0.35em] text-slate-400">
-                TikTok
+                TikTok + YouTube
               </p>
-
-              <p className="mt-4 font-bold text-slate-100">
-                @limitless915sc
-              </p>
-
+              <p className="mt-4 font-bold text-slate-100">@limitless915sc</p>
             </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/10 p-8 text-center">
-
-              <p className="text-sm uppercase tracking-[0.35em] text-slate-400">
-                Sponsor Form
-              </p>
-
-              <a
-                href="https://pci.jotform.com/form/261524366412049"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 block font-bold text-slate-100 hover:text-blue-300"
-              >
-                Open Form
-              </a>
-
-              <div className="mt-6 flex justify-center">
-                <img
-                  src="/sponsor-form-qr.png"
-                  alt="Sponsor Form QR Code"
-                  className="h-40 w-40 rounded-lg bg-white p-2"
-                />
-              </div>
-
-            </div>
-
           </div>
         </div>
       </section>
@@ -350,7 +690,6 @@ export default function Home() {
       <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-slate-500">
         © 2026 Limitless Sports Complex LLC. All rights reserved.
       </footer>
-
     </main>
   );
 }
