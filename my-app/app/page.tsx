@@ -174,10 +174,6 @@ export default function Home() {
         <h3 className="text-3xl font-black text-white md:text-4xl">
           Watch The Limitless Story
         </h3>
-
-        <p className="mt-3 text-lg text-slate-200">
-          Click to play with sound
-        </p>
       </div>
 
     </a>
