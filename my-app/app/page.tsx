@@ -114,15 +114,16 @@ export default function Home() {
     </h2>
 
     <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-      Press play to watch the full Limitless Sports Complex video with sound.
+      Tap the video below to play with sound.
     </p>
 
     <div className="mt-12 overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-2xl shadow-black/40">
       <video
         controls
+        playsInline
         preload="metadata"
         poster="/hero-bg.png"
-        className="w-full"
+        className="w-full cursor-pointer"
       >
         <source src="/limitless-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -130,7 +131,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
       {/* QUICK ACTIONS */}
       <section id="start" className="px-6 py-20">
         <div className="mx-auto max-w-7xl text-center">
