@@ -121,7 +121,7 @@ export default function Home() {
     </p>
 
     <a
-      href="/limitless-video.mp4"
+      href="/hero-video.mp4"
       target="_blank"
       rel="noopener noreferrer"
       className="group relative mt-12 block overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-black/50"
