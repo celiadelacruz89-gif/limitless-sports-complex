@@ -1,7 +1,9 @@
-export default function Home() {
+    import FeaturedVideo from "@/components/FeaturedVideo";
+   
+    export default function Home() {
   return (
     <main className="min-h-screen bg-[#020817] text-white">
-      import FeaturedVideo from "@/components/FeaturedVideo";
+  
       {/* STICKY NAVBAR */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#020817]/90 px-6 py-4 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
@@ -110,17 +112,6 @@ export default function Home() {
     <FeaturedVideo />
   </div>
 </section>
-<video
-  controls
-  playsInline
-  preload="metadata"
-  poster="/publicvideo-thumbnail.png"
-  className="w-full"
-  onPlay={() => setPlaying(true)}
-  onPause={() => setPlaying(false)}
->
-  <source src="/hero-video.mp4" type="video/mp4" />
-</video>
 
       {/* QUICK ACTIONS */}
       <section id="start" className="px-6 py-20">
