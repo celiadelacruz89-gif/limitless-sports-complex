@@ -162,12 +162,16 @@ export default function Home() {
 
       {/* PLAY BUTTON */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="flex h-28 w-28 items-center justify-center rounded-full bg-white/90 shadow-2xl transition duration-300 group-hover:scale-110">
-          <span className="ml-2 text-5xl text-[#020817]">
+         <div className="flex h-36 w-36 items-center justify-center rounded-full border-4 border-cyan-400 bg-white/95 shadow-[0_0_50px_rgba(34,211,238,0.6)]"
+           <span className="ml-2 text-6xl text-[#020817]">
             ▶
           </span>
         </div>
       </div>
+
+    </div>
+
+  </div>
 </section>
 
       {/* QUICK ACTIONS */}
