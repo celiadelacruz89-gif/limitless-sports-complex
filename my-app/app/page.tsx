@@ -15,6 +15,7 @@
             <a href="#" className="hover:text-white">Home</a>
             <a href="#start" className="hover:text-white">Start Here</a>
             <a href="#sponsoramat" className="hover:text-white">Sponsor A Mat</a>
+            <a href="#merch" className="hover:text-white">Merch</a>
             <a href="#creative" className="hover:text-white">Creative</a>
             <a href="#samples" className="hover:text-white">Samples</a>
             <a href="#cheer" className="hover:text-white">Cheer Music</a>
@@ -546,6 +547,49 @@
     </div>
   </div>
 </section>
+{/* MERCH STORE */}
+<section
+  id="merch"
+  className="border-y border-white/10 bg-gradient-to-b from-[#07122b] to-[#020817] px-6 py-24"
+>
+  <div className="mx-auto max-w-7xl">
+
+    <div className="text-center">
+      <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
+        Official Limitless Merch
+      </p>
+
+      <h2 className="mt-4 text-4xl font-black md:text-6xl">
+        Rep The Movement
+      </h2>
+
+      <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+        Every purchase helps build the future home of Limitless Sports Complex.
+      </p>
+    </div>
+
+    <div className="mt-12 overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-2xl">
+      <img
+        src="/limitless-merch-banner.png"
+        alt="Limitless Merch"
+        className="w-full"
+      />
+    </div>
+
+    <div className="mt-12 text-center">
+      <a
+        href="https://form.jotform.com/261524366412049"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-10 py-5 text-lg font-black text-white shadow-2xl transition duration-300 hover:scale-105"
+      >
+        Order Merch
+      </a>
+    </div>
+
+  </div>
+</section>
+
       {/* CREATIVE SERVICES */}
       <section id="creative" className="border-y border-white/10 bg-white/[0.04] px-6 py-24">
         <div className="mx-auto max-w-6xl text-center">
