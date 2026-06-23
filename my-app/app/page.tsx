@@ -312,7 +312,7 @@
           : "group flex aspect-square items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-sm font-black text-cyan-100 transition duration-300 hover:scale-105 hover:bg-cyan-400 hover:text-[#020817] md:text-base"
       }
     >
-      {number === 1 ? "Artegon" : `SP-${number}`}
+      {number === 1 ? "Artegon Graphics" : `SP-${number}`}
     </a>
   );
 })}
