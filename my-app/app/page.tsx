@@ -579,7 +579,7 @@
       {[
         {
           name: "Founding Member Tee",
-          price: "$30",
+          price: "$20",
           details: ["Front: LIMITLESS", "Back: BUILT BEFORE THE BUILDING", "FOUNDING MEMBER 2026"],
         },
         {
@@ -589,7 +589,7 @@
         },
         {
           name: "Legacy Hat",
-          price: "$30",
+          price: "$20",
           details: ["Front: LIMITLESS", "Side: FOUNDING MEMBER"],
         },
         {
