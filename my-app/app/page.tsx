@@ -302,19 +302,20 @@
 
         return (
           <a
-            key={number}
-            href="https://form.jotform.com/261524366412049"
-            target="_blank"
-            rel="noopener noreferrer"
-          className={
-  number === 1
-    ? "group flex aspect-square items-center justify-center rounded-xl border border-green-400 bg-green-500 px-1 text-xs font-black text-white transition duration-300 hover:scale-105"
-    : "group flex aspect-square items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-sm font-black text-cyan-100 transition duration-300 hover:scale-105 hover:bg-cyan-400 hover:text-[#020817] md:text-base"
-}
-         {number === 1 ? "Artegon" : `SP-${number}`}
-          </a>
+  key={number}
+  href="https://form.jotform.com/261524366412049"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={
+    number === 1
+      ? "group flex aspect-square items-center justify-center rounded-xl border border-green-400 bg-green-500 px-1 text-xs font-black text-white transition duration-300 hover:scale-105"
+      : "group flex aspect-square items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-sm font-black text-cyan-100 transition duration-300 hover:scale-105 hover:bg-cyan-400 hover:text-[#020817] md:text-base"
+  }
+>
+  {number === 1 ? "Artegon" : `SP-${number}`}
+</a>
+      
         );
-      })}
     </div>
   </div>
 
