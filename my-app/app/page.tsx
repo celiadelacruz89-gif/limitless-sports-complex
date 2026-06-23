@@ -249,16 +249,16 @@
   <div className="mt-8 h-8 overflow-hidden rounded-full bg-white/10">
     <div
       className="h-full bg-gradient-to-r from-cyan-400 to-blue-500"
-      style={{ width: "0%" }}
+      style={{ width: "1%" }}
     />
   </div>
 
   <p className="mt-4 font-bold text-cyan-300">
-    $0 Raised • $25,000 Goal
+    $250 Raised • $25,000 Goal
   </p>
 
   <p className="mt-2 text-sm text-slate-400">
-    0% Complete
+    1% Complete
   </p>
 </div>
       
@@ -282,11 +282,11 @@
 
 <div className="mt-6 rounded-2xl border border-green-500/30 bg-green-500/10 p-6">
   <h4 className="text-2xl font-black">
-    0 / 50 Squares Sponsored
+    1 / 50 Squares Sponsored
   </h4>
 
   <p className="mt-2 text-slate-300">
-    $0 Raised of $25,000 Goal
+    $250 Raised of $25,000 Goal
   </p>
 </div>
 
@@ -306,9 +306,12 @@
             href="https://form.jotform.com/261524366412049"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex aspect-square items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-sm font-black text-cyan-100 transition duration-300 hover:scale-105 hover:bg-cyan-400 hover:text-[#020817] md:text-base"
-          >
-          SP-{number}
+          className={
+  number === 1
+    ? "group flex aspect-square items-center justify-center rounded-xl border border-green-400 bg-green-500 px-1 text-xs font-black text-white transition duration-300 hover:scale-105"
+    : "group flex aspect-square items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-sm font-black text-cyan-100 transition duration-300 hover:scale-105 hover:bg-cyan-400 hover:text-[#020817] md:text-base"
+}
+         {number === 1 ? "Artegon" : `SP-${number}`}
           </a>
         );
       })}
@@ -349,7 +352,15 @@
     recognized as Founding Sponsors on our website, sponsor wall, and future facility.
   </p>
 </div>
+<div className="mt-8 rounded-2xl border border-green-500/30 bg-green-500/10 p-6">
+  <h3 className="text-2xl font-black text-green-300">
+    Thank You Artegon Graphics!
+  </h3>
 
+  <p className="mt-3 text-slate-300">
+    Proud Founding Sponsor of Limitless Sports Complex LLC.
+  </p>
+</div>
 {/* FEATURED SPONSORS WALL */}
 <div className="mt-16 rounded-[2rem] border border-white/10 bg-white/5 p-8">
   <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
@@ -366,20 +377,33 @@
 
   <div className="mt-10 grid gap-6 md:grid-cols-4">
     {[1, 2, 3, 4].map((sponsor) => (
-      <div
-        key={sponsor}
-        className="flex h-32 items-center justify-center rounded-2xl border border-dashed border-white/20 bg-black/20 p-6"
-      >
-        <div className="text-center">
-  <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">
-    Founding Sponsor
-  </p>
-  <p className="mt-2 text-lg font-black text-white">
-    Your Logo Here
-  </p>
-</div>
+  <div
+    key={sponsor}
+    className={
+      sponsor === 1
+        ? "flex h-32 items-center justify-center rounded-2xl border border-cyan-400 bg-white p-6"
+        : "flex h-32 items-center justify-center rounded-2xl border border-dashed border-white/20 bg-black/20 p-6"
+    }
+  >
+    {sponsor === 1 ? (
+      <img
+        src="/artegon-graphics-logo.png"
+        alt="Artegon Graphics"
+        className="max-h-20 w-auto object-contain"
+      />
+    ) : (
+      <div className="text-center">
+        <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">
+          Founding Sponsor
+        </p>
+
+        <p className="mt-2 text-lg font-black text-white">
+          Your Logo Here
+        </p>
       </div>
-    ))}
+    )}
+  </div>
+))}
   </div>
 </div>
     <div className="mt-14 grid gap-8 md:grid-cols-4">
