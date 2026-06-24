@@ -304,7 +304,7 @@
   return (
     <a
       key={number}
-      href="https://form.jotform.com/limitless915sc/Merchshop"
+     href="https://form.jotform.com/261524366412049"
       target="_blank"
       rel="noopener noreferrer"
       className={
@@ -535,7 +535,7 @@
 
     <div className="mt-12">
       <a
-        href="https://form.jotform.com/261524366412049"
+        href="https://form.jotform.com/limitless915sc/Merchshop"
         target="_blank"
         rel="noopener noreferrer"
         className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-10 py-5 text-lg font-black text-white shadow-2xl transition duration-300 hover:scale-105"
