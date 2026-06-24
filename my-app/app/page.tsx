@@ -540,7 +540,7 @@
         rel="noopener noreferrer"
         className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-10 py-5 text-lg font-black text-white shadow-2xl transition duration-300 hover:scale-105"
       >
-        Claim A Bundle
+        Become A Founding Family
       </a>
     </div>
   </div>
