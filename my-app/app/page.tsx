@@ -304,7 +304,7 @@
   return (
     <a
       key={number}
-      href="https://form.jotform.com/261524366412049"
+      href="https://form.jotform.com/limitless915sc/Merchshop"
       target="_blank"
       rel="noopener noreferrer"
       className={
@@ -317,8 +317,6 @@
     </a>
   );
 })}
-      
-        );
     </div>
   </div>
 
@@ -466,7 +464,7 @@
       </a>
 
       <a
-        href="https://form.jotform.com/261524366412049"
+       href="https://form.jotform.com/261524366412049"
         target="_blank"
         rel="noopener noreferrer"
         className="rounded-full border border-white/20 bg-white/10 px-10 py-5 text-lg font-black text-white transition duration-300 hover:scale-105"
@@ -619,7 +617,7 @@
           </ul>
 
           <a
-            href="https://form.jotform.com/261524366412049"
+           href="https://form.jotform.com/limitless915sc/Merchshop"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-8 inline-block rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 text-sm font-black text-white transition duration-300 hover:scale-105"
