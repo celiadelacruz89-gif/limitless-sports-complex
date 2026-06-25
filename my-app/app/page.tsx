@@ -317,7 +317,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      </footer>
+      <Footer />
     </main>
   );
 }
