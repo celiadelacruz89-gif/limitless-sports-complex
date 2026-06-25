@@ -1,6 +1,7 @@
-    import FeaturedVideo from "@/components/FeaturedVideo";
-    import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FeaturedVideo from "@/components/FeaturedVideo";
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#020817] text-white">
