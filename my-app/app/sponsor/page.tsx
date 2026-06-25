@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SponsorWall from "@/components/SponsorWall";
 
 export default function SponsorPage() {
   return (
@@ -173,54 +174,8 @@ export default function SponsorPage() {
             </p>
           </div>
 
-          {/* FEATURED SPONSORS WALL */}
-          <div className="mt-16 rounded-[2rem] border border-white/10 bg-white/5 p-8">
-            <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
-              Featured Sponsors
-            </p>
-
-            <h3 className="mt-4 text-4xl font-black">Founding Sponsor Wall</h3>
-
-            <p className="mx-auto mt-4 max-w-3xl text-slate-300">
-              Sponsor logos and family names will be displayed here as the campaign grows.
-            </p>
-
-            <div className="mt-10 grid gap-6 md:grid-cols-4">
-              {Array.from({ length: 8 }).map((_, index) => {
-                const sponsor = index + 1;
-
-                return (
-                  <div
-                    key={sponsor}
-                    className={
-                      sponsor === 1
-                        ? "flex h-32 items-center justify-center rounded-2xl border border-cyan-400 bg-white p-6"
-                        : "flex h-32 items-center justify-center rounded-2xl border border-dashed border-white/20 bg-black/20 p-6"
-                    }
-                  >
-                    {sponsor === 1 ? (
-                      <img
-                        src="/artegon-graphics-logo.png"
-                        alt="Artegon Graphics"
-                        className="max-h-20 w-auto object-contain"
-                      />
-                    ) : (
-                      <div className="text-center">
-                        <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">
-                          Available
-                        </p>
-
-                        <p className="mt-2 text-lg font-black text-white">
-                          Your Logo Here
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
+          <SponsorWall />
+          
           {/* WHY SPONSOR */}
           <div className="mt-12 rounded-3xl border border-cyan-500/30 bg-cyan-500/10 p-8">
             <h3 className="text-3xl font-black">Why Sponsor Limitless?</h3>
