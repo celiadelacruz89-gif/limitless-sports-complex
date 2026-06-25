@@ -1,6 +1,10 @@
     import FeaturedVideo from "@/components/FeaturedVideo";
     import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+export default function HomePage() {
+  return (
+    <main className="min-h-screen bg-[#020817] text-white">
+      <Navbar />
 
   {/* HERO */}
 <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-28 text-center">
@@ -312,8 +316,6 @@ import Footer from "@/components/Footer";
         </div>
       </section>
 
-      <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-slate-500">
-        © 2026 Limitless Sports Complex LLC. All rights reserved.
       </footer>
     </main>
   );
