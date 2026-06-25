@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SponsorWall from "@/components/SponsorWall";
+import FundraisingThermometer from "@/components/FundraisingThermometer";
 
 export default function SponsorPage() {
   return (
@@ -47,37 +48,8 @@ export default function SponsorPage() {
             and secure a permanent home for athlete development in El Paso, Texas.
           </p>
 
-          {/* PROGRESS TRACKER */}
-          <div className="mt-12 rounded-3xl border border-cyan-500/20 bg-cyan-500/10 p-8">
-            <h3 className="text-3xl font-black">Goal: $25,000</h3>
-
-            <p className="mt-4 text-slate-300">
-              Sponsor a section of the mat and become part of the foundation of
-              Limitless Sports Complex LLC.
-            </p>
-
-            <div className="mt-8 h-8 overflow-hidden rounded-full bg-white/10">
-              <div
-                className="h-full bg-gradient-to-r from-cyan-400 to-blue-500"
-                style={{ width: "1%" }}
-              />
-            </div>
-
-            <p className="mt-4 font-bold text-cyan-300">
-              $250 Raised • $25,000 Goal
-            </p>
-
-            <p className="mt-2 text-sm text-slate-400">1% Complete</p>
-          </div>
-
-          <h3 className="mt-12 text-4xl font-black">Claim Your Sponsor Spot</h3>
-
-          <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-300">
-            Your sponsorship helps build the future home of Limitless Sports
-            Complex LLC. Every sponsored square directly supports cheer flooring,
-            equipment, and a permanent training facility for local athletes.
-          </p>
-
+         <FundraisingThermometer />
+         
           {/* 2D MAT SPONSORSHIP MAP */}
           <div className="mt-14 rounded-[2rem] border border-white/10 bg-white/5 p-6 md:p-10">
             <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
@@ -175,7 +147,7 @@ export default function SponsorPage() {
           </div>
 
           <SponsorWall />
-          
+
           {/* WHY SPONSOR */}
           <div className="mt-12 rounded-3xl border border-cyan-500/30 bg-cyan-500/10 p-8">
             <h3 className="text-3xl font-black">Why Sponsor Limitless?</h3>
