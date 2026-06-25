@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SponsorWall from "@/components/SponsorWall";
 import FundraisingThermometer from "@/components/FundraisingThermometer";
+import SponsorMatGrid from "@/components/SponsorMatGrid";
 
 export default function SponsorPage() {
   return (
@@ -49,78 +50,8 @@ export default function SponsorPage() {
           </p>
 
          <FundraisingThermometer />
-         
-          {/* 2D MAT SPONSORSHIP MAP */}
-          <div className="mt-14 rounded-[2rem] border border-white/10 bg-white/5 p-6 md:p-10">
-            <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
-              Sponsor The Mat
-            </p>
 
-            <h3 className="mt-4 text-3xl font-black md:text-4xl">
-              Claim A Mat Section
-            </h3>
-
-            <div className="mt-6 rounded-2xl border border-green-500/30 bg-green-500/10 p-6">
-              <h4 className="text-2xl font-black">1 / 50 Squares Sponsored</h4>
-
-              <p className="mt-2 text-slate-300">
-                $250 Raised of $25,000 Goal
-              </p>
-            </div>
-
-            <p className="mx-auto mt-4 max-w-3xl text-slate-300">
-              Each square represents a sponsor opportunity. When a section is
-              sponsored, it can be marked as claimed and recognized on our
-              sponsor wall.
-            </p>
-
-            <div className="mx-auto mt-10 max-w-5xl rounded-3xl border border-cyan-500/30 bg-[#020817] p-4 shadow-2xl shadow-cyan-500/10">
-              <div className="grid grid-cols-5 gap-2 md:grid-cols-10">
-                {Array.from({ length: 50 }).map((_, index) => {
-                  const number = index + 1;
-
-                  return (
-                    <a
-                      key={number}
-                      href="https://form.jotform.com/261524366412049"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={
-                        number === 1
-                          ? "group flex aspect-square items-center justify-center rounded-xl border border-green-400 bg-green-500 px-1 text-xs font-black text-white transition duration-300 hover:scale-105"
-                          : "group flex aspect-square items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-1 text-xs font-black text-cyan-100 transition duration-300 hover:scale-105 hover:bg-cyan-400 hover:text-[#020817] md:text-sm"
-                      }
-                    >
-                      {number === 1 ? "Artegon" : "Available"}
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="mt-8 grid gap-4 text-left md:grid-cols-3">
-              <div className="rounded-2xl border border-cyan-400/30 bg-cyan-500/10 p-5">
-                <p className="font-black text-cyan-300">Available</p>
-                <p className="mt-2 text-sm text-slate-300">
-                  Open squares can be sponsored by families, businesses, or teams.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-yellow-400/30 bg-yellow-500/10 p-5">
-                <p className="font-black text-yellow-300">Featured Sponsors</p>
-                <p className="mt-2 text-sm text-slate-300">
-                  Larger sponsorships receive premium recognition and logo placement.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-green-400/30 bg-green-500/10 p-5">
-                <p className="font-black text-green-300">Goal Tracker</p>
-                <p className="mt-2 text-sm text-slate-300">
-                  Each claimed section helps us move closer to the $25,000 goal.
-                </p>
-              </div>
-            </div>
-          </div>
+         <SponsorMatGrid />
 
           {/* FOUNDER OPPORTUNITY */}
           <div className="mt-10 rounded-2xl border border-yellow-500/30 bg-yellow-500/10 p-6">
