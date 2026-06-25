@@ -199,8 +199,8 @@ export default function BaseballPage() {
           </div>
         </div>
       </section>
-  
-    <Footer />
-      </main>
-    );
-  }
+      
+        <Footer />
+    </main>
+  );
+}
