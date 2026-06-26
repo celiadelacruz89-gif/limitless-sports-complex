@@ -1,6 +1,8 @@
 import AdminLayout from "@/components/AdminLayout";
 import { supabase } from "@/lib/supabase-server";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminPage() {
   const { data: sponsors, error } = await supabase
     .from("sponsors")
