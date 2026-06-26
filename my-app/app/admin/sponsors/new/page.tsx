@@ -1,6 +1,7 @@
 "use client";
 
 import AdminLayout from "@/components/AdminLayout";
+import SponsorLogoUpload from "@/components/SponsorLogoUpload";
 import { supabase } from "@/lib/supabase";
 import { useState } from "react";
 
@@ -38,7 +39,7 @@ export default function NewSponsorPage() {
     setAmount("250");
     setLogoUrl("");
     setWebsite("");
-    setSquare("");
+    setSquare("1");
     setMessage("Sponsor added successfully!");
   }
 
@@ -98,15 +99,30 @@ export default function NewSponsorPage() {
             />
           </label>
 
-          <label className="block">
-            <span className="font-bold text-slate-300">Logo URL</span>
-            <input
-              value={logoUrl}
-              onChange={(e) => setLogoUrl(e.target.value)}
-              className="mt-2 w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none focus:border-cyan-400"
-              placeholder="/artegon-graphics-logo.png"
-            />
-          </label>
+          <div className="rounded-2xl border border-white/10 bg-black/20 p-5">
+            <p className="font-bold text-slate-300">Sponsor Logo</p>
+            <p className="mb-4 mt-1 text-sm text-slate-400">
+              Upload the sponsor logo. The URL will save automatically.
+            </p>
+
+            <SponsorLogoUpload onUpload={setLogoUrl} />
+
+            {logoUrl && (
+              <div className="mt-5 space-y-3">
+                <img
+                  src={logoUrl}
+                  alt="Sponsor logo preview"
+                  className="h-28 w-auto rounded-xl border border-white/10 bg-white p-3"
+                />
+
+                <input type="hidden" value={logoUrl} readOnly />
+
+                <p className="break-all text-xs text-cyan-300">
+                  Logo uploaded successfully.
+                </p>
+              </div>
+            )}
+          </div>
 
           <label className="block">
             <span className="font-bold text-slate-300">Website</span>
