@@ -1,5 +1,6 @@
 import AdminLayout from "@/components/AdminLayout";
 import { supabase } from "@/lib/supabase-server";
+import Link from "next/link";
 
 export default async function AdminSponsorsPage() {
   const { data: sponsors, error } = await supabase
@@ -19,42 +20,42 @@ export default async function AdminSponsorsPage() {
             Sponsor Management
           </p>
 
-          <h1 className="mt-4 text-5xl font-black">
-            Sponsors
-          </h1>
+          <h1 className="mt-4 text-5xl font-black">Sponsors</h1>
 
           <p className="mt-4 max-w-3xl text-slate-300">
-            View and manage sponsors for the Sponsor-A-Mat campaign.
+            View, edit, and manage sponsors for the Sponsor-A-Mat campaign.
           </p>
         </div>
 
-        <a
+        <Link
           href="/admin/sponsors/new"
           className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-4 text-center font-black text-white transition hover:scale-105"
         >
           + Add Sponsor
-        </a>
+        </Link>
       </div>
 
       <div className="mt-12 overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-        <div className="grid grid-cols-5 gap-4 border-b border-white/10 bg-white/10 p-5 text-sm font-black uppercase tracking-wider text-slate-300">
+        <div className="grid grid-cols-6 gap-4 border-b border-white/10 bg-white/10 p-5 text-sm font-black uppercase tracking-wider text-slate-300">
           <p>Name</p>
           <p>Level</p>
           <p>Amount</p>
           <p>Square</p>
           <p>Website</p>
+          <p>Actions</p>
         </div>
 
         {sponsors && sponsors.length > 0 ? (
           sponsors.map((sponsor) => (
             <div
               key={sponsor.id}
-              className="grid grid-cols-5 gap-4 border-b border-white/10 p-5 text-slate-300 last:border-b-0"
+              className="grid grid-cols-6 gap-4 border-b border-white/10 p-5 text-slate-300 last:border-b-0"
             >
               <p className="font-bold text-white">{sponsor.name}</p>
               <p>{sponsor.level}</p>
               <p>${sponsor.amount}</p>
               <p>{sponsor.square ? `#${sponsor.square}` : "—"}</p>
+
               <p>
                 {sponsor.website ? (
                   <a
@@ -69,6 +70,13 @@ export default async function AdminSponsorsPage() {
                   "—"
                 )}
               </p>
+
+              <Link
+                href={`/admin/sponsors/${sponsor.id}`}
+                className="font-bold text-cyan-300 hover:text-white"
+              >
+                Edit
+              </Link>
             </div>
           ))
         ) : (
