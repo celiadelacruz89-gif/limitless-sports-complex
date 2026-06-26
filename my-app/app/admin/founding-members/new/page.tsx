@@ -1,162 +1,143 @@
-"use client";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { supabase } from "@/lib/supabase-server";
 
-import AdminLayout from "@/components/AdminLayout";
-import { supabase } from "@/lib/supabase";
-import { useState } from "react";
+export const dynamic = "force-dynamic";
 
-export default function NewFoundingMemberPage() {
-  const [familyName, setFamilyName] = useState("");
-  const [displayName, setDisplayName] = useState("");
-  const [memberPackage, setMemberPackage] = useState("Founding Member");
-  const [amount, setAmount] = useState("100");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [isPaid, setIsPaid] = useState(true);
-  const [notes, setNotes] = useState("");
-  const [message, setMessage] = useState("");
+export default async function FoundingMembersPage() {
+  const { data: members } = await supabase
+    .from("founding_members")
+    .select("*")
+    .order("created_at", { ascending: false });
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setMessage("Saving founding member...");
+  const memberList = members || [];
 
-    const certificateNumber = `FM-${Date.now().toString().slice(-6)}`;
+  const totalMembers = memberList.length;
+  const goalMembers = 100;
 
-    const { error } = await supabase.from("founding_members").insert([
-      {
-        family_name: familyName,
-        display_name: displayName || familyName,
-        package: memberPackage,
-        amount: Number(amount),
-        email,
-        phone,
-        is_paid: isPaid,
-        notes,
-        certificate_number: certificateNumber,
-      },
-    ]);
+  const progressPercent = Math.min(
+    Math.round((totalMembers / goalMembers) * 100),
+    100
+  );
 
-    if (error) {
-      setMessage(`Error: ${error.message}`);
-      return;
-    }
-
-    setFamilyName("");
-    setDisplayName("");
-    setMemberPackage("Founding Member");
-    setAmount("100");
-    setEmail("");
-    setPhone("");
-    setIsPaid(true);
-    setNotes("");
-    setMessage("Founding member added successfully!");
-  }
+  const totalRaised = memberList.reduce(
+    (sum, member) => sum + Number(member.amount || 0),
+    0
+  );
 
   return (
-    <AdminLayout>
-      <p className="text-sm uppercase tracking-[0.4em] text-slate-400">
-        Founding Member Program
-      </p>
+    <main className="min-h-screen bg-[#020817] text-white">
+      <Navbar />
 
-      <h1 className="mt-4 text-5xl font-black">Add Founding Member</h1>
+      <section className="px-6 py-24 text-center">
+        <div className="mx-auto max-w-6xl">
+          <p className="text-sm font-bold uppercase tracking-[0.4em] text-slate-400">
+            Founding Member Campaign
+          </p>
 
-      <form
-        onSubmit={handleSubmit}
-        className="mt-12 max-w-3xl rounded-3xl border border-white/10 bg-white/5 p-8"
-      >
-        <div className="grid gap-6">
-          <label>
-            <span className="font-bold text-slate-300">Family / Business Name</span>
-            <input
-              value={familyName}
-              onChange={(e) => setFamilyName(e.target.value)}
-              required
-              className="mt-2 w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white"
-              placeholder="DeLaCruz Family"
-            />
-          </label>
+          <h1 className="mt-4 text-6xl font-black md:text-8xl">
+            100 Founding Members
+          </h1>
 
-          <label>
-            <span className="font-bold text-slate-300">Display Name</span>
-            <input
-              value={displayName}
-              onChange={(e) => setDisplayName(e.target.value)}
-              className="mt-2 w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white"
-              placeholder="The DeLaCruz Family"
-            />
-          </label>
+          <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-300">
+            Become one of the first 100 supporters helping build
+            Limitless Sports Complex.
+          </p>
 
-          <label>
-            <span className="font-bold text-slate-300">Package</span>
-            <select
-              value={memberPackage}
-              onChange={(e) => setMemberPackage(e.target.value)}
-              className="mt-2 w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white"
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+              <p className="text-sm uppercase tracking-widest text-slate-400">
+                Members
+              </p>
+              <h2 className="mt-3 text-5xl font-black">
+                {totalMembers}
+              </h2>
+            </div>
+
+            <div className="rounded-3xl border border-cyan-500/30 bg-cyan-500/10 p-8">
+              <p className="text-sm uppercase tracking-widest text-slate-400">
+                Raised
+              </p>
+              <h2 className="mt-3 text-5xl font-black text-cyan-300">
+                ${totalRaised.toLocaleString()}
+              </h2>
+            </div>
+
+            <div className="rounded-3xl border border-yellow-500/30 bg-yellow-500/10 p-8">
+              <p className="text-sm uppercase tracking-widest text-slate-400">
+                Remaining
+              </p>
+              <h2 className="mt-3 text-5xl font-black text-yellow-300">
+                {goalMembers - totalMembers}
+              </h2>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-12 max-w-4xl">
+            <div className="mb-4 flex justify-between text-sm font-bold">
+              <span>{totalMembers} Members</span>
+              <span>{goalMembers} Goal</span>
+            </div>
+
+            <div className="h-8 overflow-hidden rounded-full bg-black/40">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500"
+                style={{ width: `${progressPercent}%` }}
+              />
+            </div>
+
+            <p className="mt-4 text-2xl font-black text-cyan-300">
+              {progressPercent}% Complete
+            </p>
+          </div>
+
+          <div className="mt-20">
+            <h2 className="text-4xl font-black">
+              Founding Member Wall
+            </h2>
+
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {memberList.map((member) => (
+                <div
+                  key={member.id}
+                  className="rounded-3xl border border-white/10 bg-white/5 p-6"
+                >
+                  <h3 className="text-2xl font-black">
+                    {member.display_name || member.family_name}
+                  </h3>
+
+                  <p className="mt-2 text-cyan-300 font-bold">
+                    {member.package}
+                  </p>
+
+                  <p className="mt-3 text-slate-300">
+                    Founding Member
+                  </p>
+
+                  {member.certificate_number && (
+                    <p className="mt-3 text-xs text-slate-500">
+                      {member.certificate_number}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-16">
+            <a
+              href="https://form.jotform.com/261524366412049"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-10 py-5 text-lg font-black text-white"
             >
-              <option>Founding Member</option>
-              <option>Founding Family</option>
-              <option>Founding Business</option>
-              <option>Legacy Founder</option>
-            </select>
-          </label>
-
-          <label>
-            <span className="font-bold text-slate-300">Amount</span>
-            <input
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              type="number"
-              required
-              className="mt-2 w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white"
-            />
-          </label>
-
-          <label>
-            <span className="font-bold text-slate-300">Email</span>
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              className="mt-2 w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white"
-            />
-          </label>
-
-          <label>
-            <span className="font-bold text-slate-300">Phone</span>
-            <input
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="mt-2 w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white"
-            />
-          </label>
-
-          <label className="flex items-center gap-3">
-            <input
-              type="checkbox"
-              checked={isPaid}
-              onChange={(e) => setIsPaid(e.target.checked)}
-            />
-            <span className="font-bold text-slate-300">Paid</span>
-          </label>
-
-          <label>
-            <span className="font-bold text-slate-300">Notes</span>
-            <textarea
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-              className="mt-2 min-h-32 w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white"
-            />
-          </label>
+              Become A Founding Member
+            </a>
+          </div>
         </div>
+      </section>
 
-        <button
-          type="submit"
-          className="mt-8 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-4 font-black text-white"
-        >
-          Save Founding Member
-        </button>
-
-        {message && <p className="mt-6 font-bold text-cyan-300">{message}</p>}
-      </form>
-    </AdminLayout>
+      <Footer />
+    </main>
   );
 }
