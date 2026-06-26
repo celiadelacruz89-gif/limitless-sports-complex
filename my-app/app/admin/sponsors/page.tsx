@@ -35,55 +35,57 @@ export default async function AdminSponsorsPage() {
         </Link>
       </div>
 
-      <div className="mt-12 overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-        <div className="grid grid-cols-6 gap-4 border-b border-white/10 bg-white/10 p-5 text-sm font-black uppercase tracking-wider text-slate-300">
-          <p>Name</p>
-          <p>Level</p>
-          <p>Amount</p>
-          <p>Square</p>
-          <p>Website</p>
-          <p>Actions</p>
-        </div>
-
-        {sponsors && sponsors.length > 0 ? (
-          sponsors.map((sponsor) => (
-            <div
-              key={sponsor.id}
-              className="grid grid-cols-6 gap-4 border-b border-white/10 p-5 text-slate-300 last:border-b-0"
-            >
-              <p className="font-bold text-white">{sponsor.name}</p>
-              <p>{sponsor.level}</p>
-              <p>${sponsor.amount}</p>
-              <p>{sponsor.square ? `#${sponsor.square}` : "—"}</p>
-
-              <p>
-                {sponsor.website ? (
-                  <a
-                    href={sponsor.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-cyan-300 hover:text-white"
-                  >
-                    Visit
-                  </a>
-                ) : (
-                  "—"
-                )}
-              </p>
-
-              <Link
-                href={`/admin/sponsors/${sponsor.id}`}
-                className="font-bold text-cyan-300 hover:text-white"
-              >
-                Edit
-              </Link>
-            </div>
-          ))
-        ) : (
-          <div className="p-8 text-center text-slate-400">
-            No sponsors found.
+      <div className="mt-12 overflow-x-auto rounded-3xl border border-white/10 bg-white/5">
+        <div className="min-w-[900px]">
+          <div className="grid grid-cols-6 gap-4 border-b border-white/10 bg-white/10 p-5 text-sm font-black uppercase tracking-wider text-slate-300">
+            <p>Name</p>
+            <p>Level</p>
+            <p>Amount</p>
+            <p>Square</p>
+            <p>Website</p>
+            <p>Actions</p>
           </div>
-        )}
+
+          {sponsors && sponsors.length > 0 ? (
+            sponsors.map((sponsor) => (
+              <div
+                key={sponsor.id}
+                className="grid grid-cols-6 gap-4 border-b border-white/10 p-5 text-slate-300 last:border-b-0"
+              >
+                <p className="font-bold text-white">{sponsor.name}</p>
+                <p>{sponsor.level}</p>
+                <p>${sponsor.amount}</p>
+                <p>{sponsor.square ? `#${sponsor.square}` : "—"}</p>
+
+                <p>
+                  {sponsor.website ? (
+                    <a
+                      href={sponsor.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-300 hover:text-white"
+                    >
+                      Visit
+                    </a>
+                  ) : (
+                    "—"
+                  )}
+                </p>
+
+                <Link
+                  href={`/admin/sponsors/${sponsor.id}`}
+                  className="font-bold text-cyan-300 hover:text-white"
+                >
+                  Edit
+                </Link>
+              </div>
+            ))
+          ) : (
+            <div className="p-8 text-center text-slate-400">
+              No sponsors found.
+            </div>
+          )}
+        </div>
       </div>
     </AdminLayout>
   );
