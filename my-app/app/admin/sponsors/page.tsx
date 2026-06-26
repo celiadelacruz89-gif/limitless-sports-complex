@@ -14,6 +14,22 @@ export default async function AdminSponsorsPage() {
     console.error(error);
   }
 
+  const sponsorList = sponsors || [];
+
+  const totalSponsors = sponsorList.length;
+
+  const totalRaised = sponsorList.reduce(
+    (sum, sponsor) => sum + Number(sponsor.amount || 0),
+    0
+  );
+
+  const squaresClaimed = sponsorList.filter(
+    (sponsor) => sponsor.square
+  ).length;
+
+  const totalSquares = 50;
+  const openSquares = totalSquares - squaresClaimed;
+
   return (
     <AdminLayout>
       <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
@@ -37,6 +53,44 @@ export default async function AdminSponsorsPage() {
         </Link>
       </div>
 
+      <div className="mt-10 grid gap-6 md:grid-cols-4">
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-slate-400">
+            Total Sponsors
+          </p>
+          <h2 className="mt-4 text-4xl font-black text-white">
+            {totalSponsors}
+          </h2>
+        </div>
+
+        <div className="rounded-3xl border border-cyan-500/30 bg-cyan-500/10 p-6">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-slate-400">
+            Total Raised
+          </p>
+          <h2 className="mt-4 text-4xl font-black text-cyan-300">
+            ${totalRaised.toLocaleString()}
+          </h2>
+        </div>
+
+        <div className="rounded-3xl border border-green-500/30 bg-green-500/10 p-6">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-slate-400">
+            Squares Claimed
+          </p>
+          <h2 className="mt-4 text-4xl font-black text-green-300">
+            {squaresClaimed}
+          </h2>
+        </div>
+
+        <div className="rounded-3xl border border-yellow-500/30 bg-yellow-500/10 p-6">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-slate-400">
+            Open Squares
+          </p>
+          <h2 className="mt-4 text-4xl font-black text-yellow-300">
+            {openSquares}
+          </h2>
+        </div>
+      </div>
+
       <div className="mt-12 overflow-x-auto rounded-3xl border border-white/10 bg-white/5">
         <div className="min-w-[900px]">
           <div className="grid grid-cols-6 gap-4 border-b border-white/10 bg-white/10 p-5 text-sm font-black uppercase tracking-wider text-slate-300">
@@ -48,15 +102,15 @@ export default async function AdminSponsorsPage() {
             <p>Actions</p>
           </div>
 
-          {sponsors && sponsors.length > 0 ? (
-            sponsors.map((sponsor) => (
+          {sponsorList.length > 0 ? (
+            sponsorList.map((sponsor) => (
               <div
                 key={sponsor.id}
                 className="grid grid-cols-6 gap-4 border-b border-white/10 p-5 text-slate-300 last:border-b-0"
               >
                 <p className="font-bold text-white">{sponsor.name}</p>
                 <p>{sponsor.level}</p>
-                <p>${sponsor.amount}</p>
+                <p>${Number(sponsor.amount || 0).toLocaleString()}</p>
                 <p>{sponsor.square ? `#${sponsor.square}` : "—"}</p>
 
                 <p>
