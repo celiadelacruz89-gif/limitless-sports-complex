@@ -83,7 +83,7 @@ export default async function AdminPage() {
         </a>
 
         <a
-          href="/admin/families"
+          href="/admin/founding-members"
           className="rounded-3xl border border-green-500/30 bg-green-500/10 p-8 transition hover:scale-105"
         >
           <h3 className="text-2xl font-black">
