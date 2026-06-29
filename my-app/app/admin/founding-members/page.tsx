@@ -26,11 +26,14 @@ export default async function FoundingMembersAdminPage() {
   if (error) console.error(error);
 
   const memberList = members || [];
+
   const totalMembers = memberList.length;
+
   const totalRaised = memberList.reduce(
     (sum, member) => sum + Number(member.amount || 0),
     0
   );
+
   const goalMembers = 100;
   const remainingSpots = goalMembers - totalMembers;
 
@@ -41,9 +44,12 @@ export default async function FoundingMembersAdminPage() {
           <p className="text-sm uppercase tracking-[0.4em] text-slate-400">
             Founding Member Program
           </p>
+
           <h1 className="mt-4 text-5xl font-black">Founding Members</h1>
+
           <p className="mt-4 max-w-3xl text-slate-300">
-            Manage the 100 Founding Members campaign for Limitless Sports Complex.
+            Manage the 100 Founding Members campaign for Limitless Sports
+            Complex.
           </p>
         </div>
 
@@ -83,7 +89,7 @@ export default async function FoundingMembersAdminPage() {
       </div>
 
       <div className="mt-12 overflow-x-auto rounded-3xl border border-white/10 bg-white/5">
-        <div className="min-w-[1050px]">
+        <div className="min-w-[1150px]">
           <div className="grid grid-cols-7 gap-4 border-b border-white/10 bg-white/10 p-5 text-sm font-black uppercase tracking-wider text-slate-300">
             <p>Name</p>
             <p>Package</p>
@@ -108,7 +114,11 @@ export default async function FoundingMembersAdminPage() {
 
                 <p>${Number(member.amount || 0).toLocaleString()}</p>
 
-                <p className={member.is_paid ? "text-green-300" : "text-red-300"}>
+                <p
+                  className={
+                    member.is_paid ? "text-green-300" : "text-red-300"
+                  }
+                >
                   {member.is_paid ? "Paid" : "Unpaid"}
                 </p>
 
@@ -116,12 +126,19 @@ export default async function FoundingMembersAdminPage() {
 
                 <p>{member.email || member.phone || "—"}</p>
 
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   <Link
                     href={`/admin/founding-members/${member.id}/edit`}
                     className="rounded-full bg-cyan-500 px-4 py-2 text-sm font-black text-white transition hover:bg-cyan-400"
                   >
                     Edit
+                  </Link>
+
+                  <Link
+                    href={`/admin/founding-members/${member.id}/certificate`}
+                    className="rounded-full bg-yellow-500 px-4 py-2 text-sm font-black text-black transition hover:bg-yellow-400"
+                  >
+                    Certificate
                   </Link>
 
                   <form action={deleteFoundingMember}>
