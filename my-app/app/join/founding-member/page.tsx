@@ -6,22 +6,18 @@ const packages = [
   {
     name: "Founding Member",
     amount: 100,
-    priceId: "price_1TmhSXRraJ6o8yHgGcpo6jI0",
   },
   {
     name: "Silver Founder",
     amount: 250,
-    priceId: "price_1TmhT1RraJ6o8yHgS2ettZw5",
   },
   {
     name: "Gold Founder",
     amount: 500,
-    priceId: "price_1TmhTRRraJ6o8yHgC6whsW9A",
   },
   {
     name: "Legendary Founder",
     amount: 1000,
-    priceId: "price_1TmhTnRraJ6o8yHgjIaskqag",
   },
 ];
 
@@ -32,29 +28,47 @@ export default function FoundingMemberJoinPage() {
     event.preventDefault();
     setLoading(true);
 
-    const formData = new FormData(event.currentTarget);
+    try {
+      const formData = new FormData(event.currentTarget);
 
-    const response = await fetch("/api/stripe/founding-member-checkout", {
-      method: "POST",
-      body: JSON.stringify({
-        family_name: formData.get("family_name"),
-        display_name: formData.get("display_name"),
-        email: formData.get("email"),
-        phone: formData.get("phone"),
-        package: formData.get("package"),
-        notes: formData.get("notes"),
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+      const response = await fetch(
+        "/api/stripe/founding-member-checkout",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            family_name: formData.get("family_name"),
+            display_name: formData.get("display_name"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            package: formData.get("package"),
+            notes: formData.get("notes"),
+          }),
+        }
+      );
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
-      alert(data.error || "Something went wrong. Please try again.");
+      console.log("Checkout response:", data);
+
+      if (!response.ok) {
+        alert(data.error || "Checkout failed.");
+        setLoading(false);
+        return;
+      }
+
+      if (data.url) {
+        window.location.href = data.url;
+        return;
+      }
+
+      alert("No Stripe URL returned.");
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      alert("Checkout request failed. Check browser console.");
       setLoading(false);
     }
   }
@@ -83,7 +97,7 @@ export default function FoundingMemberJoinPage() {
 
           <input
             name="display_name"
-            placeholder="Display Name for Wall"
+            placeholder="Display Name for Founder Wall"
             className="w-full rounded-lg bg-slate-800 p-4"
           />
 
@@ -91,13 +105,13 @@ export default function FoundingMemberJoinPage() {
             name="email"
             type="email"
             required
-            placeholder="Email"
+            placeholder="Email Address"
             className="w-full rounded-lg bg-slate-800 p-4"
           />
 
           <input
             name="phone"
-            placeholder="Phone"
+            placeholder="Phone Number"
             className="w-full rounded-lg bg-slate-800 p-4"
           />
 
@@ -107,6 +121,7 @@ export default function FoundingMemberJoinPage() {
             className="w-full rounded-lg bg-slate-800 p-4"
           >
             <option value="">Select Founder Level</option>
+
             {packages.map((pkg) => (
               <option key={pkg.name} value={pkg.name}>
                 {pkg.name} — ${pkg.amount}
@@ -116,13 +131,15 @@ export default function FoundingMemberJoinPage() {
 
           <textarea
             name="notes"
-            placeholder="Notes or message"
+            placeholder="Optional Message"
+            rows={4}
             className="w-full rounded-lg bg-slate-800 p-4"
           />
 
           <button
+            type="submit"
             disabled={loading}
-            className="w-full rounded-xl bg-blue-600 py-4 font-bold hover:bg-blue-500 disabled:opacity-50"
+            className="w-full rounded-xl bg-blue-600 py-4 text-lg font-bold hover:bg-blue-500 disabled:opacity-50"
           >
             {loading ? "Redirecting..." : "Continue To Payment"}
           </button>
