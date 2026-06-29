@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { supabase } from "@/lib/supabase-server";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-
 const packages: Record<string, { amount: number; priceId: string }> = {
   "Founding Member": {
     amount: 100,
@@ -24,8 +22,18 @@ const packages: Record<string, { amount: number; priceId: string }> = {
 };
 
 export async function POST(req: Request) {
-  const body = await req.json();
+  const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 
+  if (!stripeSecretKey) {
+    return NextResponse.json(
+      { error: "Missing STRIPE_SECRET_KEY" },
+      { status: 500 }
+    );
+  }
+
+  const stripe = new Stripe(stripeSecretKey);
+
+  const body = await req.json();
   const selectedPackage = packages[body.package];
 
   if (!selectedPackage) {
@@ -57,8 +65,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
