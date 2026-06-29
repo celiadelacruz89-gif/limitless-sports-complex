@@ -1,8 +1,21 @@
 import AdminLayout from "@/components/AdminLayout";
 import { supabase } from "@/lib/supabase-server";
 import Link from "next/link";
+import { revalidatePath } from "next/cache";
+import DeleteFoundingMemberButton from "@/components/DeleteFoundingMemberButton";
 
 export const dynamic = "force-dynamic";
+
+async function deleteFoundingMember(formData: FormData) {
+  "use server";
+
+  const id = String(formData.get("id"));
+
+  await supabase.from("founding_members").delete().eq("id", id);
+
+  revalidatePath("/admin/founding-members");
+  revalidatePath("/founding-members");
+}
 
 export default async function FoundingMembersAdminPage() {
   const { data: members, error } = await supabase
@@ -28,12 +41,9 @@ export default async function FoundingMembersAdminPage() {
           <p className="text-sm uppercase tracking-[0.4em] text-slate-400">
             Founding Member Program
           </p>
-
           <h1 className="mt-4 text-5xl font-black">Founding Members</h1>
-
           <p className="mt-4 max-w-3xl text-slate-300">
-            Manage the 100 Founding Members campaign for Limitless Sports
-            Complex.
+            Manage the 100 Founding Members campaign for Limitless Sports Complex.
           </p>
         </div>
 
@@ -73,32 +83,52 @@ export default async function FoundingMembersAdminPage() {
       </div>
 
       <div className="mt-12 overflow-x-auto rounded-3xl border border-white/10 bg-white/5">
-        <div className="min-w-[900px]">
-          <div className="grid grid-cols-6 gap-4 border-b border-white/10 bg-white/10 p-5 text-sm font-black uppercase tracking-wider text-slate-300">
+        <div className="min-w-[1050px]">
+          <div className="grid grid-cols-7 gap-4 border-b border-white/10 bg-white/10 p-5 text-sm font-black uppercase tracking-wider text-slate-300">
             <p>Name</p>
             <p>Package</p>
             <p>Amount</p>
             <p>Paid</p>
             <p>Certificate</p>
             <p>Contact</p>
+            <p>Actions</p>
           </div>
 
           {memberList.length > 0 ? (
             memberList.map((member) => (
               <div
                 key={member.id}
-                className="grid grid-cols-6 gap-4 border-b border-white/10 p-5 text-slate-300 last:border-b-0"
+                className="grid grid-cols-7 items-center gap-4 border-b border-white/10 p-5 text-slate-300 last:border-b-0"
               >
                 <p className="font-bold text-white">
                   {member.display_name || member.family_name}
                 </p>
+
                 <p>{member.package}</p>
+
                 <p>${Number(member.amount || 0).toLocaleString()}</p>
+
                 <p className={member.is_paid ? "text-green-300" : "text-red-300"}>
                   {member.is_paid ? "Paid" : "Unpaid"}
                 </p>
+
                 <p>{member.certificate_number || "—"}</p>
+
                 <p>{member.email || member.phone || "—"}</p>
+
+                <div className="flex gap-2">
+                  <Link
+                    href={`/admin/founding-members/${member.id}/edit`}
+                    className="rounded-full bg-cyan-500 px-4 py-2 text-sm font-black text-white transition hover:bg-cyan-400"
+                  >
+                    Edit
+                  </Link>
+
+                  <form action={deleteFoundingMember}>
+                    <input type="hidden" name="id" value={member.id} />
+                    <DeleteFoundingMemberButton />
+                  </form>
+                </div>
               </div>
             ))
           ) : (

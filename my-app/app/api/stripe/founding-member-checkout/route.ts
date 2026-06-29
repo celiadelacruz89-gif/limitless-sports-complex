@@ -83,6 +83,12 @@ export async function POST(req: Request) {
       package: body.package,
     },
   });
-
+await supabase
+  .from("founding_members")
+  .update({
+    stripe_session_id: session.id,
+  })
+  .eq("id", member.id);
+  
   return NextResponse.json({ url: session.url });
 }
