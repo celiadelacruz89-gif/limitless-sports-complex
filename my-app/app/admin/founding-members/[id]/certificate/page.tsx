@@ -1,6 +1,7 @@
 import AdminLayout from "@/components/AdminLayout";
 import { supabase } from "@/lib/supabase-server";
 import Link from "next/link";
+import PrintButton from "@/components/PrintButton";
 
 export const dynamic = "force-dynamic";
 
@@ -40,12 +41,7 @@ export default async function CertificatePage({
           Back
         </Link>
 
-        <button
-          onClick={() => window.print()}
-          className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 font-black text-white"
-        >
-          Print / Save PDF
-        </button>
+        <PrintButton />
       </div>
 
       <div className="mx-auto max-w-5xl bg-white p-10 text-black print:max-w-none">
