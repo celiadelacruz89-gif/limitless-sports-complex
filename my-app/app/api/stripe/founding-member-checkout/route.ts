@@ -5,19 +5,19 @@ import { supabase } from "@/lib/supabase-server";
 const packages: Record<string, { amount: number; priceId: string }> = {
   "Founding Member": {
     amount: 100,
-    priceId: "price_1TmhSXRraJ6o8yHgGcpo6jI0",
+    priceId: "price_1Tni0lRraJ6o8yHgRokuzg6m",
   },
   "Silver Founder": {
     amount: 250,
-    priceId: "price_1TmhT1RraJ6o8yHgS2ettZw5",
+    priceId: "price_1Tni0JRraJ6o8yHg678Xko4F",
   },
   "Gold Founder": {
     amount: 500,
-    priceId: "price_1TmhTRRraJ6o8yHgC6whsW9A",
+    priceId: "price_1TnhzuRraJ6o8yHgoFB0Kyo3",
   },
   "Legendary Founder": {
     amount: 1000,
-    priceId: "price_1TmhTnRraJ6o8yHgjIaskqag",
+    priceId: "price_1TnhzURraJ6o8yHgXyKhUBRh",
   },
 };
 
