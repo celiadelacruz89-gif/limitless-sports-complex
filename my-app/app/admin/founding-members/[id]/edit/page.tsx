@@ -1,7 +1,8 @@
 import AdminLayout from "@/components/AdminLayout";
 import { supabase } from "@/lib/supabase-server";
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+
 
 async function updateMember(formData: FormData) {
   "use server";
@@ -23,6 +24,7 @@ async function updateMember(formData: FormData) {
 
   revalidatePath("/admin/founding-members");
   revalidatePath("/founding-members");
+  redirect("/admin/founding-members");
 }
 
 export default async function EditMemberPage({
