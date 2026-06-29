@@ -27,6 +27,8 @@ export default async function CertificatePage({
   }
 
   const founderName = member.display_name || member.family_name || "Founding Member";
+  const founderNumber =
+  member.certificate_number?.replace("FM-", "").replace(/^0+/, "") || "—";
   const joinedDate = member.created_at
     ? new Date(member.created_at).toLocaleDateString()
     : new Date().toLocaleDateString();
@@ -73,11 +75,12 @@ export default async function CertificatePage({
             and community growth.
           </p>
 
-          <div className="mt-10 grid grid-cols-3 gap-6 text-sm font-bold uppercase tracking-widest">
-            <p>Certificate: {member.certificate_number || "—"}</p>
-            <p>Amount: ${Number(member.amount || 0).toLocaleString()}</p>
-            <p>Date: {joinedDate}</p>
-          </div>
+          <div className="mt-10 grid grid-cols-4 gap-6 text-sm font-bold uppercase tracking-widest">
+  <p>Founder #{founderNumber} of 100</p>
+  <p>Certificate: {member.certificate_number || "—"}</p>
+  <p>Amount: ${Number(member.amount || 0).toLocaleString()}</p>
+  <p>Date: {joinedDate}</p>
+</div>
 
           <div className="mt-20 grid grid-cols-2 gap-16">
             <div>
