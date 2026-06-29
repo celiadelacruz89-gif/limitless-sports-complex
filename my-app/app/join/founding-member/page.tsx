@@ -51,17 +51,18 @@ export default function FoundingMemberJoinPage() {
 
     const data = await response.json();
 
-     if (data.url) {
-  window.location.href = data.url;
-} else {
-  alert(data.error || "Something went wrong. Please try again.");
-  setLoading(false);
-}
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert(data.error || "Something went wrong. Please try again.");
+      setLoading(false);
+    }
+  }
 
   return (
     <main className="min-h-screen bg-[#020817] text-white px-6 py-20">
       <div className="mx-auto max-w-3xl">
-        <h1 clif (data.url)assName="text-4xl font-bold text-center">
+        <h1 className="text-4xl font-bold text-center">
           Become A Founding Member
         </h1>
 
