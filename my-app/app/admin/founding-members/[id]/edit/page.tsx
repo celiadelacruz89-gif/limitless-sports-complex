@@ -28,18 +28,29 @@ async function updateMember(formData: FormData) {
 export default async function EditMemberPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
+  const { id } = await params;
+
   const { data: member } = await supabase
     .from("founding_members")
     .select("*")
-    .eq("id", params.id)
+    .eq("id", id)
     .single();
 
-  if (!member) {
-    notFound();
-  }
+ if (!member) {
+  return (
+    <AdminLayout>
+      <h1 className="text-4xl font-black text-red-300">
+        Member Not Found
+      </h1>
 
+      <p className="mt-4 text-slate-300">
+        No founding member was found with this ID.
+      </p>
+    </AdminLayout>
+  );
+}
   return (
     <AdminLayout>
       <div className="mx-auto max-w-3xl">
